@@ -33,4 +33,4 @@ require __DIR__.'/auth.php';
 
 //এই লিঙ্ক যে কাউ access করতে পারবে। আমারা middleware দিয়ে দিব।
 Route::get('admin/dashboard' , [AdminDashboardController::class, 'index'])->middleware('auth')->name('admin.dashboard');
- 
+  
