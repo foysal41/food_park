@@ -18,6 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/dashboard';
+    public const ADMIN = 'admin/dashboard';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
@@ -35,6 +36,11 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+
+                //এখন এই middleware স্বয়ংক্রিয়ভাবে admin.php ফাইলে প্রয়োগ হবে। অর্থাৎ, admin.php-তে যতগুলো রুটই নিবন্ধিত হোক, সবগুলোতেই এই middleware প্রযোজ্য হবে।
+            Route::middleware(['web' , 'auth' , 'role:admin'])
+                ->group(base_path('routes/admin.php'));
         });
     }
 }
+

@@ -31,6 +31,10 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+
+/*
+moved to admin.php route
+
 //এই লিঙ্ক যে কাউ admin ছাড়া কাউ access করতে পারবে। আমারা middleware দিয়ে দিব।
 Route::get('admin/dashboard' , [AdminDashboardController::class, 'index'])->middleware('auth' , 'role:admin')->name('admin.dashboard');
-
+*/
