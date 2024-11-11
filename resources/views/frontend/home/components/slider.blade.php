@@ -8,7 +8,7 @@
                             <div class="col-xl-5 col-md-5 col-lg-5">
                                 <div class="fp__banner_img wow fadeInLeft" data-wow-duration="1s">
                                     <div class="img">
-                                        <img src="images/slider_img_1.png" alt="food item" class="img-fluid w-100">
+                                        <img src="{{ asset('frontend/images/slider_img_1.png') }}" alt="food item" class="img-fluid w-100">
                                         <span> 35% off </span>
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@
                             <div class="col-xl-5 col-md-5 col-lg-5">
                                 <div class="fp__banner_img wow fadeInLeft" data-wow-duration="1s">
                                     <div class="img">
-                                        <img src="images/slider_img_2.png" alt="food item" class="img-fluid w-100">
+                                        <img src="{{ asset('frontend/images/slider_img_2.png') }}" alt="food item" class="img-fluid w-100">
                                         <span style="background: url(images/offer_shapes.png);">
                                             70% off
                                         </span>
@@ -64,7 +64,7 @@
                             <div class="col-xl-5 col-md-5 col-lg-5">
                                 <div class="fp__banner_img wow fadeInLeft" data-wow-duration="1s">
                                     <div class="img">
-                                        <img src="images/slider_img_3.png" alt="food item" class="img-fluid w-100">
+                                        <img src="{{ asset('frontend/images/slider_img_3.png') }}" alt="food item" class="img-fluid w-100">
                                         <span style="background: url(images/offer_shapes.png);">
                                             50% off
                                         </span>
