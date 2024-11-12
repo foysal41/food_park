@@ -28,6 +28,7 @@ Route::middleware('guest')->group(function () {
     Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])
                 ->name('password.email');
 
+       //  প্রথমে এই get রাউট ওয়েবসাইটে পৃষ্ঠা ওপেন করে এবং পরেরটা post রিকোয়েস্ট হ্যান্ডেল করে
     Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])
                 ->name('password.reset');
 
