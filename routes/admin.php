@@ -19,7 +19,10 @@ Route::get('admin/dashboard' , [AdminDashboardController::class, 'index'])->midd
 
 */
 
+
+
 Route::group(['prefix' => 'admin', 'as' =>'admin.'], function(){
+
     Route::get('dashboard' , [AdminDashboardController::class, 'index'])->name('dashboard');
 });
 
