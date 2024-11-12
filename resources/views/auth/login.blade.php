@@ -84,7 +84,7 @@
                         <div class="fp__login_area">
                             <h2>Welcome back!</h2>
                             <p>sign in to continue</p>
-                            <form method="POST" action="{{ route('login') }}">
+                            <form method="POST" >
                                 @csrf
                                 <div class="row">
 

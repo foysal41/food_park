@@ -15,6 +15,7 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/css/components.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/toastr.min.css') }}">
 
     <!-- Start GA -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
@@ -57,11 +58,11 @@
                             </div>
 
                             <div class="card-body">
-                                <form method="POST" action="#" class="needs-validation" novalidate="">
+                                <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <input id="email" type="email" class="form-control" name="email"
-                                            tabindex="1" required autofocus>
+                                            tabindex="1" required autofocus value="{{ old('email') }}">
                                         <div class="invalid-feedback">
                                             Please fill in your email
                                         </div>
@@ -101,9 +102,8 @@
 
                             </div>
                         </div>
-                        <div class="mt-5 text-muted text-center">
-                            Don't have an account? <a href="auth-register.html">Create One</a>
-                        </div>
+
+                        {{-- অপ্রয়োজনীয় উপাদান সরানো: লগইন পেজ থেকে সোশ্যাল আইকন এবং "Create an account" টেক্সট বাদ দেওয়া হয়েছে, কারণ অ্যাডমিন প্যানেলে রেজিস্ট্রেশনের প্রয়োজন নেই।  --}}
                         <div class="simple-footer">
                             Copyright Foysal Jaman 2024
                         </div>
@@ -129,7 +129,17 @@
     <!-- Template JS File -->
     <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
     <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/toastr.min.js') }}"></script>
 
+
+    <script>
+        toastr.options.progressBar = true;
+        @if($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error('{{ $error }}');
+            @endforeach
+        @endif
+    </script>
 </body>
 
 </html>
