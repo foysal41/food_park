@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 
 
 //1. আমি চাইলে এই পেজ ভিউ করতে পারব না কারণ এই admin.php রাউটার রেজিস্টার করা নেই
@@ -24,6 +26,9 @@ Route::get('admin/dashboard' , [AdminDashboardController::class, 'index'])->midd
 Route::group(['prefix' => 'admin', 'as' =>'admin.'], function(){
 
     Route::get('dashboard' , [AdminDashboardController::class, 'index'])->name('dashboard');
+
+    /* Profile Route */
+    Route::get('profile' , [ProfileController::class, 'index'])->name('profile');
 });
 
 
