@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Http\Requests\Admin;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+
+class ProfileUpdateRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        //authorize-এ আমরা এটি আপাতত true সেট করব। না হলে এটি কাজ করবে না।
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function rules(): array
+    {
+        return [
+            'name' => ['required', 'max:50'],
+
+
+            /*
+                যখন আমরা unique নিয়মটি আপডেটের জন্য ব্যবহার করি, তখন আমাদের বর্তমান রো আইডিটি উপেক্ষা করতে হয়। কারণ আমরা যে রো আপডেট করছি, সেটির সাথে অন্য কোনো রো’র ডেটা মিলিয়ে না যায়। যেমন, আমরা যদি ইউজার প্রোফাইল আপডেট করি এবং একই নাম বা ইমেইল অন্য কোনো রোতে থাকলে সেটা যেন সমস্যা না করে।
+
+                এটা করার জন্য unique রুলের সাথে বর্তমান ইউজারের রো আইডি (যেটা আপডেট করা হচ্ছে) উপেক্ষা করতে হবে। অর্থাৎ, আমরা বলতে চাই, “এটি ইউনিক হবে, তবে বর্তমান ইউজারের আইডি মিলিয়ে দেখবে না।”
+
+                    এটা করতে হলে unique রুলের পরে .ignore(বর্তমান ইউজারের আইডি) যুক্ত করতে হয়। এজন্য auth() ব্যবহার করে বর্তমান লগইনকৃত ইউজারের আইডি নেয়া যায়।
+            */
+
+            /*
+             Reason of the request validation: আমরা এখন ফ্রন্টএন্ডে ইমেইল বা নাম না দিয়ে সাবমিট করবো। ইমেইল ও নাম ফিল্ডে কিছু না দিলে সেটি জমা (submit) হবে না।
+
+            */
+            'email' => ['required',  'email', 'max:200', 'unique:users,email,' .auth(0)->user()->id],
+
+
+        ];
+    }
+}
