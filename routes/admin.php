@@ -34,6 +34,10 @@ Route::group(['prefix' => 'admin', 'as' =>'admin.'], function(){
     //আগে profileController এ কাজ করেছি।
     Route::put('profile' , [ProfileController::class, 'updateProfile'])->name('profile.update');
 
+    //এখানে আমরা একটি নতুন রুট তৈরি করবো। যেহেতু এটি একটি ফর্ম হ্যান্ডেল করবে এবং ডাটাবেজে তথ্য আপডেট করবে, তাই আমরা PUT মেথড ব্যবহার করবো।
+
+    Route::put('profile/password' , [ProfileController::class, 'updatePassword'])->name('profile.password.update');
+
 });
 
 

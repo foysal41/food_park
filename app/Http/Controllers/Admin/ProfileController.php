@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ProfileUpdateRequest;
+use App\Http\Requests\Admin\ProfilePasswordUpdateRequest;
 use Illuminate\Contracts\View\View;
 use Auth;
+
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -42,6 +44,17 @@ class ProfileController extends Controller
         $user->save();
 
         toastr('Updated Successfully', 'success');
+        return redirect()->back();
+    }
+
+    function updatePassword(ProfilePasswordUpdateRequest $request) :RedirectResponse{
+
+
+      $user = Auth::user();
+      $user->password = bcrypt($request->password);
+      $user->save;
+
+      toastr('Updated Successfully', 'success');
         return redirect()->back();
     }
 }
