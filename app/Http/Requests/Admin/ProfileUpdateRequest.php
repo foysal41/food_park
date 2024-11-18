@@ -24,6 +24,14 @@ class ProfileUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
+
+
+            /*
+                nullable রুল যোগ করা: ইমেজ ফিল্ড (অথবা Avatar ফিল্ড) ফাঁকা থাকতে পারে।
+                image/ইমেজ ভ্যালিডেশন: Avatar ইনপুটটি সত্যিই একটি ইমেজ কিনা, তা যাচাই করা হবে।
+                max/ইমেজ সাইজ সীমাবদ্ধ করা: ইমেজের সর্বোচ্চ সাইজ 3000 কিলোবাইট (প্রায় 3MB) নির্ধারণ করা হয়েছে।
+            */
+            'avatar' => ['nullable' , 'image' , 'max:3000'],
             'name' => ['required', 'max:50'],
 
 

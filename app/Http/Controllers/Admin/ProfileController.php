@@ -36,6 +36,7 @@ class ProfileController extends Controller
     function updateProfile(ProfileUpdateRequest $request) : RedirectResponse {
 
         // for check is my data can be store or not: dd(request()->all());
+        // for check is my avatar image can be store or not dd($request->all());
 
         $user = auth::user();
 

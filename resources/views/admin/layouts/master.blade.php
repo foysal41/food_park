@@ -95,6 +95,8 @@ features-post-create>fretures-post-create.js  থেকে কপি করে �
 });
   </script>
 
+@stack('scripts')
+
 
 {{--
   -----------------   Admin - Login Page Mastering (Part 2)------------------
