@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ProfileUpdateRequest;
 use App\Http\Requests\Admin\ProfilePasswordUpdateRequest;
 use Illuminate\Contracts\View\View;
+use App\Traits\FileUploadTrait;
 use Auth;
 
 use Illuminate\Http\RedirectResponse;
@@ -13,6 +14,9 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
+
+    use FileUploadTrait;
+
     function index() : View{
         return view('admin.profile.index');
     }
@@ -40,8 +44,16 @@ class ProfileController extends Controller
 
         $user = auth::user();
 
+        //FileUploadTrait এর মদ্ধ uploadImage function name কল করলাম।
+        $imagePath = $this->uploadImage($request , 'avatar');
+
+        // for check is my avatar image can be store or not dd($imagePath);
+
         $user->name = $request->name;
         $user->email = $request->email;
+
+//isset($imagePath) চেক করবে ভ্যারিয়েবলটি সেট করা আছে কিনা। 2. যদি সেট থাকে, তাহলে $imagePath নিজেই ব্যবহৃত হবে। 3. যদি সেট না থাকে, তাহলে $user()->avatar থেকে ইউজারের অ্যাভাটার নেওয়া হবে।
+        $user->avatar = isset($imagePath) ? $imagePath : $user->avatar;
         $user->save();
 
         toastr('Updated Successfully', 'success');
