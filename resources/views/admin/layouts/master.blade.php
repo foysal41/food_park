@@ -59,7 +59,7 @@
 
 
 <!-- JS Libraries -->
-
+<script src="{{ asset('admin/assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js') }}"></script>
 
 <!-- Page Specific JS File -->
 
@@ -69,6 +69,31 @@
 
 
 
+<!-- Show dynamic validation message -->
+
+  <script>
+    toastr.options.progressBar  = true;
+
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+            toastr.error("{{ $error }}")
+        @endforeach
+    @endif
+  </script>
+
+{{-- এই কোড টুকু public>admin>js>page>features-post
+features-post-create>fretures-post-create.js  থেকে কপি করে আনতে হবে --}}
+  <script>
+    $.uploadPreview({
+  input_field: "#image-upload",   // Default: .image-upload
+  preview_box: "#image-preview",  // Default: .image-preview
+  label_field: "#image-label",    // Default: .image-label
+  label_default: "Choose File",   // Default: Choose File
+  label_selected: "Change File",  // Default: Change File
+  no_label: false,                // Default: false
+  success_callback: null          // Default: null
+});
+  </script>
 
 
 {{--

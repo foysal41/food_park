@@ -59,6 +59,7 @@
 
                             <div class="card-body">
                                 <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
+                                
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <input id="email" type="email" class="form-control" name="email"
