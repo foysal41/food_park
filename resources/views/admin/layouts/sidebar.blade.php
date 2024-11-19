@@ -24,9 +24,34 @@
                     <i class="fas fa-cog"></i> Settings
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
+
+
+
+{{-- এই code টুকু  view>layout>navigation থেকে নেয়া হয়েছে --}}
+
+{{--
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-dropdown-link>
+                </form>
+--}}
+
+
+
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <a href="#" onclick="event.preventDefault(); this.closest('form').submit();" class="dropdown-item has-icon text-danger">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </form>
+
+
             </div>
         </li>
     </ul>
