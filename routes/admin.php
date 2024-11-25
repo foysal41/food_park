@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\SliderController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -37,6 +38,11 @@ Route::group(['prefix' => 'admin', 'as' =>'admin.'], function(){
     //এখানে আমরা একটি নতুন রুট তৈরি করবো। যেহেতু এটি একটি ফর্ম হ্যান্ডেল করবে এবং ডাটাবেজে তথ্য আপডেট করবে, তাই আমরা PUT মেথড ব্যবহার করবো।
 
     Route::put('profile/password' , [ProfileController::class, 'updatePassword'])->name('profile.password.update');
+
+
+
+    /*  Slider Route  */
+    Route::resource('slider' , SliderController::class);
 
 });
 

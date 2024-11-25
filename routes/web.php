@@ -21,7 +21,11 @@ use PHPUnit\Framework\Attributes\Group;
 */
 
    /** Admin Auth Routes **/
-   Route::get('admin/login' , [AdminAuthController::class, 'adminlogin'])->name('admin.login');
+//যেহেতু ইউজার তার ক্রিডেনশিয়াল দিয়ে লগইন করেছে, তাই ইউজার এই admin/login URL হিট করতে পারবে না। that's why middleware
+   Route::group(['middleware' => 'guest'], function(){
+    Route::get('admin/login' , [AdminAuthController::class, 'adminlogin'])->name('admin.login');
+   });
+
 
 Route::get('/' , [FrontendController::class , 'index'])->name('home');
 
