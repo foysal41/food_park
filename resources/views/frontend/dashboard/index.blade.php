@@ -35,11 +35,15 @@
                         <div class="fp__dashboard_menu">
                             <div class="dasboard_header">
                                 <div class="dasboard_header_img">
-                                    <img src="images/comment_img_2.png" alt="user" class="img-fluid w-100">
+                                    <img src="{{ Auth::user()->avatar }}" alt="user" class="img-fluid w-100">
                                     <label for="upload"><i class="far fa-camera"></i></label>
-                                    <input type="file" id="upload" hidden>
+                                    <form action="" id="avatar_form">
+                                        {{-- আমাদের এই ফর্মের জন্য কোনো বাটন নেই, তাহলে, যখন আমরা এই বাটনে ক্লিক করে ইমেজ সিলেক্ট করব, তখন ফর্মটি সাবমিট করতে হবে। এজন্য আমাদের জাভাস্ক্রিপ্টের সাহায্য নিতে হবে।  --}}
+                                        <input type="file" id="upload" hidden name="avatar">
+                                    </form>
+
                                 </div>
-                                <h2>hasib ahmed</h2>
+                                <h2>{{ Auth::user()->name }}</h2>
                             </div>
                             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                                 aria-orientation="vertical">
@@ -1241,3 +1245,32 @@
             DASHBOARD END
         ==========================-->
 @endsection
+@push('scripts')
+
+{{-- যখন আমরা ইমেজ সিলেক্ট করব, তখন কী হবে? ধরো, এই ইমেজ সিলেক্ট করলে আমাদের ইনপুটটা চেঞ্জ হবে. আমরা অটোমেটিক্যালি একটা অ্যাজাক্স রিকোয়েস্ট পাঠাব এবং ইমেজ আপলোড করব  --}}
+<script>
+   $(document).ready(function(){
+        $('#upload').on('change' , function(){
+            //alert('its working');
+            let form = $('#avatar_form')[0];
+            let formData = new FormData(form);
+            //console.log(formData);
+            $.ajax({
+                method: 'POST',
+                url: "{{ route('profile.avatar.update') }}"
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response){
+                    console.log(response);
+
+                },
+                error:function(error){
+                    console.error(error);
+                }
+            })
+        })
+   });
+</script>
+
+@endpush

@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+     <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
+
     <title>FoodPark || Restaurant Template</title>
     <link rel="stylesheet" href="{{ asset('frontend/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
@@ -90,15 +92,25 @@
 <script src="{{ asset('frontend/js/main.js') }}"></script>
 
 <script>
+
+
     toastr.options.progressBar = true;
     @if($errors->any())
         @foreach ($errors->all() as $error)
             toastr.error('{{ $error }}');
         @endforeach
     @endif
+
+        //set csrf at ajax header
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 </script>
 
-
+@stack('scripts')
 </body>
 
 </html>
