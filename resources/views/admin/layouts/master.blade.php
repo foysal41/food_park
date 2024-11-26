@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/assets/modules/fontawesome/css/all.min.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/assets/modules/fontawesome/css/toastr.min.css') }}">
+<link rel="stylesheet" href="//cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
 
 
 
@@ -66,6 +67,7 @@
 <!-- Template JS Files -->
 <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
 <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
+<script src="//cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
 
 
 
