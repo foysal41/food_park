@@ -27,6 +27,9 @@ return new class extends Migration
 
 /*
  All steps are down below
+
+ **এখানে, আপনি DataTable তৈরি করার জন্য যেসব কলাম প্রয়োজন, তা আপনার ডিজাইন দেখে বুঝতে হবে। উদাহরণস্বরূপ, একটি slider টেবিলের জন্য যা দেখানো হবে: ইমেজ: একটি কলাম প্রয়োজন হবে, অফার/ডিসকাউন্ট,  মেইন টাইটেল, সাবটাইটেল, ডেস্ক্রিপশন, বাটন লিঙ্ক , স্ট্যাটা**
+
 1. php artisan make:migration create_sliders_table --create=sliders
 
 2. আমরা স্লাইডারের জন্য একটি ফ্যাক্টরি তৈরি করছি, আমাদের মডেলের নাম Slider hobe |  php artisan make:factory SliderFactory|  Why factory? ম্যানুয়ালি ইনসার্ট করার দরকার নেই—Factory স্বয়ংক্রিয়ভাবে তোমার জন্য ডেটা তৈরি করে দেবে।
