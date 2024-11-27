@@ -9,6 +9,7 @@ use App\Http\Requests\Admin\SliderCreateRequest;
 use App\Models\Slider;
 use App\Traits\FileUploadTrait;
 use Illuminate\Contracts\View\View;
+use Illuminate\View\View as ViewView;
 
 class SliderController extends Controller
 {
@@ -42,10 +43,7 @@ class SliderController extends Controller
          2. সব ডাটা সেভ করলাম
         */
 
-
-
         $imagePath = $this->uploadImage($request, 'image' );
-
         $slider = new Slider();
         $slider->image = $imagePath;
         $slider->offer = $request->offer;
@@ -54,7 +52,6 @@ class SliderController extends Controller
         $slider->short_description = $request->short_description;
         $slider->button_link = $request->button_link;
         $slider->status = $request->status;
-
         $slider->save();
 
 
@@ -63,11 +60,6 @@ class SliderController extends Controller
 
         toastr()->success('Slider Created Successfully');
         return to_route('admin.slider.index');
-
-
-
-
-
 
 
     }
@@ -83,9 +75,26 @@ class SliderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id) : View
     {
-        //
+        /*
+
+        --------|  Home Slider- Update Slider Feature (Part - 2)   |-----------
+        1. edit.blade.php file load করাব
+        2. আমরা findOrFail মেথড ব্যবহার করছি কারণ, এটি একটি নির্দিষ্ট ID দিয়ে ডেটাবেস থেকে রেকর্ড খুঁজে বের করে। ID পাওয়া গেলে: এটি ডেটাবেস থেকে সেই রেকর্ডটি রিটার্ন করবে or 404 page. ফ্রন্টএন্ডে পাঠানোর জন্য compact() মেথড ব্যবহার করা.
+
+        3. now goto edit.blade.php> old value গুলা প্রদর্শন করব
+
+        4. image display করার জন্য admin>profile>index.blade.php থেকে image script টা copy করে নিব।
+
+        5. now সব কাজ শেষ হলে আপডেট করলে কাজ করবে না।  route এ update করতে হবে।
+
+        */
+
+
+        $slider = Slider::findOrFail($id);
+        //dd($slider);
+        return view ('admin.slider.edit'  , compact('slider'));
     }
 
     /**
