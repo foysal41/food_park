@@ -67,11 +67,13 @@
 ----------------| Home Slider- Create Slider Feature (Part - 2) |----------------
 1. here first work is set all field put name attrubute Then set form action(route) and method
 2. Second work SliderController এর মদ্ধে dd দিয়ে ডাটা store হচ্ছে কিনা তা check korlam.
-3. third work : অই ডাটা validate করার জন্য একটা request class বানাবো। php artisan make:request Admin/SliderCreateRequest এর মদ্ধে all field valid করলাম। এবং slider create migrate file এ কিছু change করলাম। এবার re migrate করতে হবে। php artisan migrate:fresh->এটা করলে সব ডাটা চলে যাবে|
+3. third work : অই ডাটা validate করার জন্য একটা request class বানাবো। php artisan make:request Admin/SliderCreateRequest এর মদ্ধে all field valid করলাম।
+
+"এবং slider create migrate file এ কিছু change করলাম। এবার re migrate করতে হবে। php artisan migrate:fresh->এটা করলে সব ডাটা চলে যাবে|
 এবার seeder গুলা update করতে হবে। php artisan db:seed
 তা হলে user and admin এর id and pass seed update হয়ে যাবে।
-আর database>seeders>databaseseeer.php এর মদ্ধে slider factory ৩ তা uplaod হয়ে যাবে।
+আর database>seeders>databaseseeer.php এর মদ্ধে slider factory ৩ তা uplaod হয়ে যাবে।"
 
-4. Validation rule slider controller এর মদ্ধে apply করার জন্য parameter হিসাবে অই request class দেখলাম। End the part 
+4. Validation rule slider controller এর মদ্ধে apply করার জন্য parameter হিসাবে অই request class দেখলাম। End the part
 
 --}}

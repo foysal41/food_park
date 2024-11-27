@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('image');
             $table->string('offer')->nullable();
             $table->string('title');
-            $table->string('subtitle');
+            $table->string('sub_title');
             $table->string('short_description');
             $table->string('button_link')->nullable();
             $table->boolean('status')->default(1);

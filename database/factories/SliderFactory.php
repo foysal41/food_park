@@ -22,7 +22,7 @@ class SliderFactory extends Factory
 
             //sentence ব্যবহার করলে এটি আমাদের জন্য একটি বাক্য তৈরি করবে। এখন আমরা এখানে একটি লিমিট সেট করতে পারি ৬টি শব্দের
             'title' => fake()->sentence(),
-            'subtitle' =>fake()->sentence(10),
+            'sub_title' =>fake()->sentence(10),
             'short_description' => fake()->paragraph(2),
             'button_link' => fake()->url(),
             'status' => fake()->boolean(),

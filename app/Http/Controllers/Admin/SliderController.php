@@ -6,10 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\DataTables\SliderDataTable;
 use App\Http\Requests\Admin\SliderCreateRequest;
+use App\Models\Slider;
+use App\Traits\FileUploadTrait;
 use Illuminate\Contracts\View\View;
 
 class SliderController extends Controller
 {
+    use FileUploadTrait;
     /**
      * Display a listing of the resource.
      */
@@ -32,6 +35,41 @@ class SliderController extends Controller
     public function store(SliderCreateRequest $request)
     {
         //dd($request->all());
+        /*
+         --------|  Home Slider- Create Slider Feature (Part - 3)   |-----------
+
+         1. Traits>FileUploadTrait.php file load করাব এই contorller এর মদ্ধে
+         2. সব ডাটা সেভ করলাম
+        */
+
+
+
+        $imagePath = $this->uploadImage($request, 'image' );
+
+        $slider = new Slider();
+        $slider->image = $imagePath;
+        $slider->offer = $request->offer;
+        $slider->title = $request->title;
+        $slider->sub_title = $request->sub_title;
+        $slider->short_description = $request->short_description;
+        $slider->button_link = $request->button_link;
+        $slider->status = $request->status;
+
+        $slider->save();
+
+
+
+        //return redirect()->route('admin.slider.index')->with('success' , 'Slider Created Successfully');
+
+        toastr()->success('Slider Created Successfully');
+        return to_route('admin.slider.index');
+
+
+
+
+
+
+
     }
 
     /**
