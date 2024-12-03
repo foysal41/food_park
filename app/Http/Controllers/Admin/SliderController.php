@@ -10,6 +10,7 @@ use App\Http\Requests\Admin\SliderUpdateRequest;
 use App\Models\Slider;
 use App\Traits\FileUploadTrait;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View as ViewView;
 
 class SliderController extends Controller
@@ -101,12 +102,24 @@ class SliderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(SliderUpdateRequest $request, string $id)
+    public function update(SliderUpdateRequest $request, string $id) : RedirectResponse
     {
         $slider = Slider::findOrFail($id);
 
         /* Handle Image Upload */
         $imagePath = $this->uploadImage($request, 'image' , $slider->image);
+
+        //এটা basically ternary operator ব্যবহার করা হচ্ছে যাতে চেক করা হয় যে, যদি এই imagePath ভেরিয়েবলটি খালি না থাকে, তবে সেটা আমাদের নতুন পাথ হবে। অথবা, যদি সেটা খালি থাকে, তবে পুরোনো পাথ যোগ করা হবে।
+        $slider->image = !empty($imagePath ? $imagePath : $slider->image);
+        $slider->offer = $request->offer;
+        $slider->title = $request->title;
+        $slider->sub_title = $request->sub_title;
+        $slider->short_description = $request->short_description ?? 'Default description';
+        $slider->button_link = $request->button_link;
+        $slider->status = $request->status;
+        $slider->save();
+        toastr()->success('Slider Updated Successfully');
+        return to_route('admin.slider.index');
     }
 
     /**
