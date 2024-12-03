@@ -15,6 +15,7 @@
             <div class="card-body">
                 <form action="{{ route('admin.slider.update' , $slider->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="form-group">
                         <label>Image</label>
                         <div id="image-preview" class="image-preview">
@@ -67,6 +68,15 @@
 
 
 @endsection
+
+{{--
+ --------|  Home Slider- Update Slider Feature (Part - 3)   |-----------
+1. যখন আপডেট view থেকে হিট করা হবে তখন update controller এর মধ্যে যে হিট করবে
+2. এখন একটা request বানাবো সেটা হচ্ছে edit slider এর জন্য [php artisan make:request admin/SliderUpdateRequest]
+3. এখানে যখন আমরা প্রোফাইলের ছবি আপলোড করব,  তখন আমাদের খেয়াল রাখতে হবে যে আগের ছবিটা আছে সেটাকে ডিলিট করতে হবে
+
+
+--}}
 
 
 @push('scripts')
