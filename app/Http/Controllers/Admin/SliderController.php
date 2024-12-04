@@ -127,6 +127,16 @@ class SliderController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //dd('its working');
+
+
+        try{
+            $slider = Slider::findOrFail($id);
+        $slider->delete();
+        return response(['Status' => 'success' , 'message' => 'Slider Deleted Successfully']);
+        } catch(\Exception $e){
+            return response(['Status' => 'error' , 'message' => $e->getMessage()]);
+
+        }
     }
 }

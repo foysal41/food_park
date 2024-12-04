@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>General Dashboard &mdash; Stisla</title>
 
     <!-- General CSS Files -->
@@ -105,27 +106,53 @@ features-post-create>fretures-post-create.js  থেকে কপি করে �
             success_callback: null // Default: null
         });
 
+
+        // Set csrf at ajax header
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         $(document).ready(function() {
 
-            $('body').on('click' , '.delete-item' , function(e){
+            $('body').on('click', '.delete-item', function(e) {
                 e.preventDefault();
+                //আমারা  href attribute কে variable এর মদ্ধে store করলাম
+                let url = $(this).attr('href');
+                //console.log(url);
                 Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        icon: "success"
-                    });
-                }
-            });
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
+                        $.ajax({
+                            method: 'DELETE',
+                            url: url,
+                            data: {},
+                            success: function(response) {
+                                if (response.status == 'success') {
+                                    toastr.success(response.message);
+                                    $('#slider-table').DataTable().ajax.reload();
+                                } else if (response.status == 'error') {
+                                    toastr.error(response.message);
+                                }
+                            },
+                            error: function(xhr, status, error) {
+                                console.log(
+                                error);
+                            }
+                        });
+
+
+
+                    }
+                });
             })
 
         });
