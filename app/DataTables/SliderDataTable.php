@@ -61,7 +61,17 @@ class SliderDataTable extends DataTable
 
                 $delete = "<a href='".route('admin.slider.destroy' , $query->id)."' class='btn btn-danger btn-sm ml-2 delete-item'> <i class='fas fa-trash'></i></a>";
                 return $edit.$delete;
+            })->addColumn('image' , function($query){
+                return '<img src="'.asset($query->image).'" alt="" width="50" height="50">';
+            })->addColumn('status' , function($query){
+                if($query->status === 1){
+                    return '<span class="badge badge-primary">Active</span>';
+                }else{
+                    return '<span class="badge badge-danger">Inactive</span>';
+                }
             })
+
+            ->rawColumns(['image' , 'status' , 'action'])
             ->setRowId('id');
     }
 
@@ -83,7 +93,7 @@ class SliderDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     //->dom('Bfrtip')
-                    ->orderBy(1)
+                    ->orderBy(0)
                     ->selectStyleSingle()
                     ->buttons([
                         Button::make('excel'),
@@ -102,9 +112,10 @@ class SliderDataTable extends DataTable
     {
         return [
 
-            Column::make('id'),
-            Column::make('image'),
+            Column::make('id')->width(60),
+            Column::make('image')->width(100),
             Column::make('title'),
+            Column::make('status'),
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
