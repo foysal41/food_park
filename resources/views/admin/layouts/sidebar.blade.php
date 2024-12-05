@@ -27,9 +27,9 @@
 
 
 
-{{-- এই code টুকু  view>layout>navigation থেকে নেয়া হয়েছে --}}
+                {{-- এই code টুকু  view>layout>navigation থেকে নেয়া হয়েছে --}}
 
-{{--
+                {{--
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
@@ -46,7 +46,8 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <a href="#" onclick="event.preventDefault(); this.closest('form').submit();" class="dropdown-item has-icon text-danger">
+                    <a href="#" onclick="event.preventDefault(); this.closest('form').submit();"
+                        class="dropdown-item has-icon text-danger">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
                 </form>
@@ -66,11 +67,12 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li class=active><a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fas fa-fire"></i> General Dashboard</a>
+            <li class=active><a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fas fa-fire"></i>
+                    General Dashboard</a>
             </li>
             <li class="menu-header">Starter</li>
 
-                {{-- 1. আমি স্লাইডারের জন্য একটি কন্ট্রোলার, মাইগ্রেশন এবং মডেল তৈরি করব। চলো কোডে যাই এবং টার্মিনাল ওপেন করি। artisan make:controller Admin/SliderController -r and php artisan make:model Slider -m
+            {{-- 1. আমি স্লাইডারের জন্য একটি কন্ট্রোলার, মাইগ্রেশন এবং মডেল তৈরি করব। চলো কোডে যাই এবং টার্মিনাল ওপেন করি। artisan make:controller Admin/SliderController -r and php artisan make:model Slider -m
 
                 2. route > admin.php add slider resource route. press ctrl + shift + p > artisan Route List > search list of slider routes (artisan extension ).
 
@@ -80,7 +82,11 @@
 
                 5. index এ কিছু content দিয়ে slider display করলাম।
                 --}}
-                <li><a class="nav-link" href="{{ route('admin.slider.index') }}"><i class="far fa-square"></i> <span>Slider</span></a></li>
+
+            <li><a class="nav-link" href="{{ route('admin.slider.index') }}"><i class="far fa-square"></i>
+                    <span>Slider</span></a></li>
+
+            <li><a class="nav-link" href="{{ route('admin.why-choose-us.index') }}"><i class="far fa-square"></i> <span>Why Choose Us</span></a></li>
 
 
             {{--
@@ -93,6 +99,8 @@
         <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
 
         --}}
+
+
 
         </ul>
 
