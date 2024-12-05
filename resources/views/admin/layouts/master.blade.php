@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>General Dashboard &mdash; Stisla</title>
+    <title>General Dashboard &mdash; Foysal</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap/css/bootstrap.min.css') }}">
@@ -108,11 +108,15 @@ features-post-create>fretures-post-create.js  থেকে কপি করে �
 
 
         // Set csrf at ajax header
-        $.ajaxSetup({
+        /*$.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
-        });
+        });*/
+
+        // check করলাম csrf token কাজ করছে কিনা। console এ যেয়ে প্রিন্ট করলাম।
+        //console.log($.ajaxSetup().headers);
+
         $(document).ready(function() {
 
             $('body').on('click', '.delete-item', function(e) {
@@ -134,11 +138,14 @@ features-post-create>fretures-post-create.js  থেকে কপি করে �
                         $.ajax({
                             method: 'DELETE',
                             url: url,
-                            data: {},
+                            data: {_token: "{{ csrf_token() }}"},
                             success: function(response) {
                                 if (response.status == 'success') {
                                     toastr.success(response.message);
-                                    $('#slider-table').DataTable().ajax.reload();
+
+                                    //$('#slider-table').DataTable().ajax.reload();
+                                    window.location.reload();
+
                                 } else if (response.status == 'error') {
                                     toastr.error(response.message);
                                 }
@@ -156,6 +163,8 @@ features-post-create>fretures-post-create.js  থেকে কপি করে �
             })
 
         });
+
+
     </script>
 
     @stack('scripts')
