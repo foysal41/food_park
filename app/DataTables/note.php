@@ -62,3 +62,17 @@ work with this page: master.blade.php
 
 */
 
+
+
+/*
+
+    ----------|Home Slider- Show Sliders at Frontend|------------------
+
+    1. controller>frontend>frontendController.php  slider model user করলাম।
+    2. $sliders variable frontend এ পাঁঠিয়ে দিলাম।
+    3. frontend থেকে content গুলা dynamic করে দিলাম।
+
+
+
+
+*/
