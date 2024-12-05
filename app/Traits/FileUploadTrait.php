@@ -33,6 +33,8 @@ Path - ইমেজ স্টোরেজের ডিফল্ট পাথ (�
 namespace App\Traits;
 use Illuminate\Http\Request;
 use File;
+use PhpParser\Node\Stmt\Return_;
+
 trait FileUploadTrait{
 
     /* function updateImage(Request $request, $inputName, $path = "/uploads"){
@@ -88,5 +90,12 @@ Input Name: ইমেজ ইনপুট ফিল্ডের নাম (যে
         }
 
         return NULL;
+    }
+
+
+    function removeImage(string $path) : void{
+        if(File::exists(public_path($path))){
+            File::delete(public_path($path));
+        }
     }
 }
