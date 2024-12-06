@@ -119,11 +119,17 @@ ex:  Route::put('why-choose-title-update' , WhyChooseUsController::class , 'upda
 4.  Document: https://victor-valencia.github.io/bootstrap-iconpicker/
 
 
+*/
 
 
 
 
+/*
+--------------------| Why Choose Us - Handle the Create Form for store function |----------------
 
-
+1. যখন আমার ক্রিয়েট হবে তখন কন্ট্রোলারের স্টোরে গিয়ে হিট করবে
+2. ক্রিয়েট  রিকোয়েস্ট ভ্যালিডেশনের জন্য একটি ক্লাস বানাবো php artisan make:request Admin/WhyChooseUsCreateRequest
+3. why choose us model এরমধ্যে protected $guarded = [];
+4. WhyChooseUsController.php এর  store মেথডের কাজটা একটু অন্যভাবে করলাম
 
 */

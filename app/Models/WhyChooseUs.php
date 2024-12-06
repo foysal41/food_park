@@ -9,6 +9,6 @@ class WhyChooseUs extends Model
 {
     use HasFactory;
 
-
+protected $guarded = [];
 
 }
