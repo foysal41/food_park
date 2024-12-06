@@ -7,40 +7,38 @@
     <div class="section-header">
         <h1>Why Choose Us</h1>
     </div>
-    <div class="card">
-        <div class="card-body">
-          <div id="accordion">
-            <div class="accordion">
-              <div class="accordion-header collapsed bg-primary text-light p-3" role="button" data-bs-toggle="collapse" data-bs-target="#panel-body-1" aria-expanded="false">
-                <h4>Why Choose Us Section</h4>
-              </div>
-              <div class="accordion-collapse collapse" id="panel-body-1" data-bs-parent="#accordion">
-                <div class="accordion-body">
-                  <form>
+
+        <div class="card">
+          <div class="card-body">
+            <div id="accordion">
+              <div class="accordion">
+                <div class="accordion-header collapsed bg-primary text-light p-3" role="button" data-toggle="collapse" data-target="#panel-body-1" aria-expanded="false">
+                  <h4>Why Choose Us Section</h4>
+                </div>
+                <div class="accordion-body collapse" id="panel-body-1" data-parent="#accordion" style="">
+                  <p class="mb-0">
                     <div class="form-group">
-                      <label for="top-title">Top Title</label>
-                      <input type="text" class="form-control" id="top-title">
+                        <label for="title">Top Title</label>
+                        <input type="text" class="form-control">
                     </div>
 
                     <div class="form-group">
-                      <label for="main-title">Main Title</label>
-                      <input type="text" class="form-control" id="main-title">
+                        <label for="title">Main Title</label>
+                        <input type="text" class="form-control">
                     </div>
-
                     <div class="form-group">
-                      <label for="sub-title">Sub Title</label>
-                      <input type="text" class="form-control" id="sub-title">
+                        <label for="title">Sub Title</label>
+                        <input type="text" class="form-control">
                     </div>
-
-                    <button class="btn btn-primary" type="submit">Save</button>
-                  </form>
+                    <button class="btn btn-primary" type="submit"> Save</button>
+                  </p>
                 </div>
               </div>
+
+
             </div>
           </div>
         </div>
-      </div>
-
 
 
 
