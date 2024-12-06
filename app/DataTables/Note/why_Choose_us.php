@@ -83,3 +83,21 @@ ex:  Route::put('why-choose-title-update' , WhyChooseUsController::class , 'upda
 
 
 */
+
+
+
+
+/*
+--------------------| Why choose us - Creating Migration Columns and Seed Data For Why Chose Us Sect |----------------
+
+1. why choose us card টেবিলের জন্য 3ta column তৈরি করতে হবে. icon, title, description
+যদি Error Noting migration: php artisan migrate:rollback --path=/database/migrations/2024_12_05_121407_create_why_choose_us_table.php
+
+2. এবার আমরা seeder php artisan make:seeder WhyChooseUsSeeder নিয়ে কাজ করব AND dummy ডাটা তৈরি করার জন্য ফ্যাক্টরি বানাবো php artisan make:factory WhyChooseUsFactory
+
+4. database>seeders>\App\Models\WhyChooseUs::factory(3)->create(); এটা কানেক্ট করব
+এরপর command যে  App\Models\WhyChooseUs::factory(4)->create(); চারটা ড্যামি ডেটা বানিয়ে দিবে
+
+
+
+*/
