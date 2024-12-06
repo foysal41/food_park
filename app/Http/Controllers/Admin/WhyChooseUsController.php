@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\WhyChooseUsDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\SectionTitle;
 use Illuminate\Http\Request;
 
 class WHyChooseUsController extends Controller
@@ -13,7 +14,11 @@ class WHyChooseUsController extends Controller
      */
     public function index(WhyChooseUsDataTable $dataTable)
     {
-        return $dataTable->render('admin.why-choose-us.index');
+
+        $key = ['why_choose_top_title' , 'why_choose_main_title' , 'why_choose_sub_title'];
+        $titles = SectionTitle::WhereIn('key' , $key)->pluck('value', 'key');
+        //dd($title);
+        return $dataTable->render('admin.why-choose-us.index' , compact('titles'));
     }
 
     /**

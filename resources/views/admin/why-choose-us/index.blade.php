@@ -17,20 +17,28 @@
                 </div>
                 <div class="accordion-body collapse" id="panel-body-1" data-parent="#accordion" style="">
                   <p class="mb-0">
-                    <div class="form-group">
-                        <label for="title">Top Title</label>
-                        <input type="text" class="form-control">
-                    </div>
 
-                    <div class="form-group">
-                        <label for="title">Main Title</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="title">Sub Title</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <button class="btn btn-primary" type="submit"> Save</button>
+
+                    <form action="">
+
+                        <div class="form-group">
+                            <label for="title">Top Title</label>
+                            <input type="text" class="form-control" name="why_choose_top_title" value="{{ $titles['why_choose_top_title'] }}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="title">Main Title</label>
+                            <input type="text" class="form-control" name="why_choose_main_title" value="{{ $titles['why_choose_main_title'] }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Sub Title</label>
+                            <input type="text" class="form-control" name="why_choose_sub_title" value="{{
+                            $titles['why_choose_sub_title'] }}">
+                        </div>
+                        <button class="btn btn-primary" type="submit"> Save</button>
+
+
+                    </form>
                   </p>
                 </div>
               </div>
