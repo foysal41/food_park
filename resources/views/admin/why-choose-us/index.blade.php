@@ -19,21 +19,23 @@
                   <p class="mb-0">
 
 
-                    <form action="">
+                    <form action="{{ route('admin.why-choose-title-update') }}" method="POST">
+                        @csrf
+                        @method('PUT')
 
                         <div class="form-group">
                             <label for="title">Top Title</label>
-                            <input type="text" class="form-control" name="why_choose_top_title" value="{{ $titles['why_choose_top_title'] }}">
+                            <input type="text" class="form-control" name="why_choose_top_title" value="{{ @$titles['why_choose_top_title'] }}">
                         </div>
 
                         <div class="form-group">
                             <label for="title">Main Title</label>
-                            <input type="text" class="form-control" name="why_choose_main_title" value="{{ $titles['why_choose_main_title'] }}">
+                            <input type="text" class="form-control" name="why_choose_main_title" value="{{ @$titles['why_choose_main_title'] }}">
                         </div>
                         <div class="form-group">
                             <label for="title">Sub Title</label>
                             <input type="text" class="form-control" name="why_choose_sub_title" value="{{
-                            $titles['why_choose_sub_title'] }}">
+                            @$titles['why_choose_sub_title'] }}">
                         </div>
                         <button class="btn btn-primary" type="submit"> Save</button>
 

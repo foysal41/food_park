@@ -61,6 +61,38 @@ class WHyChooseUsController extends Controller
         //
     }
 
+    public function updateTitle(Request $request)
+    {
+        // Validate incoming request data
+        $request->validate([
+            'why_choose_top_title' => 'max:100',
+            'why_choose_main_title' => 'max:200',
+            'why_choose_sub_title' => 'max:300',
+        ]);
+
+
+        SectionTitle::updateOrCreate(
+            //এখানে যে ঘটনাটি ঘটছে যদি "key" এর ভেতরে কোন লেখা/ টেক্সট থাকে তাহলে "value" ভিতরে আপডেট অথবা তৈরি করবে
+            ['key' => 'why_choose_top_title'],
+            ['value' => $request->why_choose_top_title]
+        );
+
+        SectionTitle::updateOrCreate(
+            ['key' => 'why_choose_main_title'],
+            ['value' => $request->why_choose_main_title]
+        );
+
+        SectionTitle::updateOrCreate(
+            ['key' => 'why_choose_sub_title'],
+            ['value' => $request->why_choose_sub_title]
+        );
+
+        // Success message
+        toastr()->success('Successfully Updated');
+        return redirect()->back();
+    }
+
+
     /**
      * Remove the specified resource from storage.
      */
