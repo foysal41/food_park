@@ -101,3 +101,29 @@ ex:  Route::put('why-choose-title-update' , WhyChooseUsController::class , 'upda
 
 
 */
+
+
+
+
+
+/*
+--------------------| Why Choose Us - Working with Why Choose Us Create Form ICON Design |----------------
+
+
+1. resources>views>admin>why-choose-us>create.blade.php. slider create সমস্ত কোড কপি করে নিয়ে আসলাম. button লিংক ধরিয়ে দিলাম
+
+2. why-choose-us কন্ট্রোলারের ভিতরে যাব এবং create function  এর মধ্যে view রিটার্ন করব.
+
+3. Use https://github.com/victor-valencia/bootstrap-iconpicker and download the zip and see dist folder
+
+4.  Document: https://victor-valencia.github.io/bootstrap-iconpicker/
+
+
+
+
+
+
+
+
+
+*/
