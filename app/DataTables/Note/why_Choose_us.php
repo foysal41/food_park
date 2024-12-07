@@ -133,3 +133,14 @@ ex:  Route::put('why-choose-title-update' , WhyChooseUsController::class , 'upda
 4. WhyChooseUsController.php এর  store মেথডের কাজটা একটু অন্যভাবে করলাম
 
 */
+
+/*
+--------------------| Why Choose Us - Showing Data at Index |----------------
+
+1. WhyChooseUsDataTable ফাইলের মধ্যে getColumns re এরেঞ্জ করে নিলাম and created and upate_at delete করে দিলাম. Also Icon and title add column করলাম
+
+2. এবার data টেবিলের আইকন গুলো শো করাবো. এর জন্য datatable function কাস্টম কলাম রেজিস্টার করতে হবে. addColumn('icon' , function($query) and rawcolumn দিয়ে রেন্ডার করে দিলাম
+
+3.  এবার আমরা edit and delete এই ফাংশনের জন্য একটি columnরেজিস্টার করব. এটা আমরা স্লাইডার টেবিল থেকে কপি করে নিয়ে আসতে পারি.
+
+*/
