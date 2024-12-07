@@ -144,3 +144,19 @@ ex:  Route::put('why-choose-title-update' , WhyChooseUsController::class , 'upda
 3.  এবার আমরা edit and delete এই ফাংশনের জন্য একটি columnরেজিস্টার করব. এটা আমরা স্লাইডার টেবিল থেকে কপি করে নিয়ে আসতে পারি.
 
 */
+
+
+
+/*
+--------------------| Why Choose Us - Working with Update Feature |----------------
+
+1. why choose us এর  edit.blade.php  ফাইল তৈরি করব. why choose us এর create.blade.php code কপি করে নিয়ে এসে edit ভিতরে পেস্ট করি. কারণ ক্রিয়েট এবং এডিট এর ফর্ম দুইটাই একই
+
+2. এডিট ফর্ম এর সকল field ডাইনামিক করার পর. form সাবমিট হওয়ার পর admin.why-choose-us.update controller  গিয়ে হিট করবে. এই আপডেট ফাংশনের কাজ করলাম ঠিক যেমনটা করেছিলাম store ফাংশন এর জন্য
+
+3. ডাটা টেবিলের ভেতর  status এই কলাম রেজিস্ট্রেশন করলাম এবং render করলাম
+
+
+*/
+
+
