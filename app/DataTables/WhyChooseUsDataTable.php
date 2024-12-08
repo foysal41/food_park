@@ -31,7 +31,7 @@ class WhyChooseUsDataTable extends DataTable
             })
 
             ->addColumn('icon' , function($query){
-                return "<i style='font-size: 50px' class='".$query->icon."' > </i>";
+                return "<i style='font-size: 30px' class='".$query->icon."' > </i>";
             })
 
             ->addColumn('status' , function($query){
@@ -63,7 +63,7 @@ class WhyChooseUsDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     //->dom('Bfrtip')
-                    ->orderBy(0)
+                    ->orderBy(0 , 'asc')
                     ->selectStyleSingle()
                     ->buttons([
                         Button::make('excel'),
