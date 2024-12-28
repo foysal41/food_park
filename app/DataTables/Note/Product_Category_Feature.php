@@ -55,5 +55,20 @@
 
 1. getColumns মেথড edit করলাম
 2. dataTable function এর মদ্ধে 'action' , 'show_at_home' , 'status কাজ করলাম
+3. ডাটা ভ্যালিলেট করার জন্য একটা ক্লাস তৈরি করলাম  php artisan make:request Admin/CategoryUpdateRequest
+
+*/
+
+
+
+/*
+--------------------|116. 5_Product Category - Working with Update and Delete Feature|----------------
+
+1. update করার জন্য edit.blade.php তৈরি করলাম
+    - edit মদ্ধে findOrFail function use করে ডাটা admin.product.category.edit মদ্ধে পাঠিয়ে দিলাম।
+    - edit মদ্ধে input value  অ্যাড করলাম। এটা করার জন্য update মদ্ধে ডাটা ভ্যালিলেট করলাম
+    এবার এটা inject করব কন্ট্রোলারের update ভেতর ডাটা insert করব and store এর সব ডাটা paste করলাম।
+    - fially destory method নিয়ে কাজ করলাম।
+
 
 */
