@@ -18,6 +18,23 @@
 
 
 
+*/
+
+
+/*
+--------------------|113. 2_Product Category - Creating Migration Columns and Seeders |----------------
+
+1. category migration এর মধ্যে column তৈরি হবে then migrate করলাম
+2. আমরা ফ্যাক্টরি ফাইল তৈরি করেছিলাম কিন্তু এটা ডিলিট করে দেবো আমরা seeders তৈরি করব php artisan make:seeder CategorySeeder
+    - এখানে আমরা ডাটা ইনসার্ট করব
+    - এই seeder ডাটা ইনসার্ট হবে না যতক্ষণ না পর্যন্ত মডেলের ভিতর টেবিলের নাম গুলো দিচ্ছি
+    -DatabaseSeeder.php এর মধ্যে seeder টা কানেক্ট করে দিব
+    - php artisan db:seed --class=CategorySeeder
+
+পরের part create features part
+
+
+
 
 
 */
