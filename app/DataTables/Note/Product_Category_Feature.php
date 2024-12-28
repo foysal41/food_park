@@ -48,3 +48,12 @@
 
 
 */
+
+
+/*
+--------------------|115. 4_Product Category - Showing Data at Index Page|----------------
+
+1. getColumns মেথড edit করলাম
+2. dataTable function এর মদ্ধে 'action' , 'show_at_home' , 'status কাজ করলাম
+
+*/
