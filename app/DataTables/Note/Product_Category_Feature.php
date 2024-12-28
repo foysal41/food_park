@@ -34,7 +34,17 @@
 পরের part create features part
 
 
+*/
 
+
+/*
+--------------------|114. 3_Product Category - Working with Create Feature |----------------
+
+1. first a category > button a rotue link সেট করলাম।
+2. category folder এর মদ্ধে একটি create.blade.php তৈরি করলাম. Slider এর মদ্ধে থেকে code গুলা নিয়ে আসলাম।
+3. category contorller মধ্য create function রিটার্ন করব
+4. ডাটা ভ্যালিলেট করার জন্য একটা ক্লাস তৈরি করলাম  php artisan make:request Admin/CategoryCreateRequest
+5. এবার এটা inject করব কন্ট্রোলারের store ভেতর ডাটা insert করব
 
 
 */
