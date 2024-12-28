@@ -86,17 +86,30 @@
             <li><a class="nav-link" href="{{ route('admin.slider.index') }}"><i class="far fa-square"></i>
                     <span>Slider</span></a></li>
 
-            <li><a class="nav-link" href="{{ route('admin.why-choose-us.index') }}"><i class="far fa-square"></i> <span>Why Choose Us</span></a></li>
+            <li><a class="nav-link" href="{{ route('admin.why-choose-us.index') }}"><i class="far fa-square"></i>
+                    <span>Why Choose Us</span></a></li>
+
+            <li class="dropdown">
+                <a href="#" class="has-dropdown nav-link"><i class="far fa-square"></i> <span>Manage Resturnat</span></a>
+
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="{{ route('admin.category.index') }}" class="nav-link">Product Category</a>
+                    </li>
+                </ul>
+
+            </li>
 
 
             {{--
-          <ul class="dropdown-menu">
-            <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
-            <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
-            <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
-          </ul>
+                 <ul class="dropdown-menu">
+                    <li>
+                        <a href="{{ route('admin.category.index') }}" class="nav-link">Prodcut Category</a>
+                    </li>
+                </ul>
 
-        <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
+            </li>
+
 
         --}}
 
