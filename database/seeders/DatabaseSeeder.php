@@ -34,5 +34,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\WhyChooseUs::factory(3)->create();
 
         $this->call(CategorySeeder::class);
+        \App\Models\Product::factory(10)->create();
     }
 }

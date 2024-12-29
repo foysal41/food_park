@@ -19,3 +19,18 @@
 
 
 */
+
+
+
+/*
+--------------------|119. 3_Product - Adding Seeder Data with Factory |----------------
+1. product factory file ভেতরে কিছু fake dummy ডেটা  ইন্সার্ট করলাম
+2. DatabaseSeeder.php ভেতরে এই ডেটা ইন্সার্ট করলাম \App\Models\Product::factory(10)->create();
+3. Terminal ভেতরে
+    - php artisan tinker
+    - \App\Models\Product::factory(5)->create()  করে এই ডেটা ইন্সার্ট করলাম
+
+*/
+
+
+
