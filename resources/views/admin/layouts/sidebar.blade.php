@@ -93,9 +93,9 @@
                 <a href="#" class="has-dropdown nav-link"><i class="far fa-square"></i> <span>Manage Resturnat</span></a>
 
                 <ul class="dropdown-menu">
-                    <li>
-                        <a href="{{ route('admin.category.index') }}" class="nav-link">Product Category</a>
-                    </li>
+                    <li> <a href="{{ route('admin.product.index') }}" class="nav-link">All Products</a> </li>
+                    <li> <a href="{{ route('admin.category.index') }}" class="nav-link">Product Category</a> </li>
+
                 </ul>
 
             </li>
