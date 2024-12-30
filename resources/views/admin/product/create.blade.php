@@ -30,7 +30,7 @@
 
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" name="name" class="form-control">
+                        <input type="text" name="name" class="form-control" value="{{ old('name') }}">
                     </div>
 
 
@@ -53,21 +53,60 @@
 
                     <div class="form-group">
                         <label>price</label>
-                        <input type="text" name="price" class="form-control">
+                        <input type="text" name="price" class="form-control" value="{{ old('price') }}">
                     </div>
+
+
+
 
 
 
 
                     <div class="form-group">
                         <label>Offer Price</label>
-                        <input type="text" name="offer_price" class="form-control">
+                        <input type="text" name="offer_price" class="form-control" value="{{ old('offer_price') }}">
                     </div>
+
+
+
 
 
                     <div class="form-group">
                         <label>Short Description</label>
-                        <textarea name="short_description" id="" class="form-control" cols="30" rows="10"></textarea>
+                        <textarea name="short_description" id="" class="form-control" cols="30" rows="10">{{ old('short_description') }}</textarea>
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label>Long Description</label>
+                        <textarea name="long_description" id="" class="form-control summernote" cols="30" rows="10">{{ old('long_description') }}</textarea>
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label>SKU </label>
+                        <input type="text" name="sku" class="form-control" value="{{ old('sku') }}">
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+                        <label>SEO Title </label>
+                        <input type="text" name="seo_title" class="form-control" value="{{ old('seo_title') }}">
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label>SEO Description </label>
+                        <input type="text" name="seo_description" class="form-control" value="{{ old('seo_description') }}">
                     </div>
 
 
