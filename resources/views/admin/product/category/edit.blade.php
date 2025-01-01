@@ -38,7 +38,7 @@
                     <select name="status" id="" class="form-control">
                         <option @selected($category->stats === 1) value="1">Active</option>
                         <option @selected($category->stats === 0) value="0">Inactive</option>
-                    </select
+                    </select>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Update</button>
