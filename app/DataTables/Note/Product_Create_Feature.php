@@ -130,3 +130,14 @@
 
 
 */
+
+
+/*
+--------------------|126. 10_Product - Working with Update Feature (Part - 2) |----------------
+
+1. একটি request ফাইল তৈরী করবো php artisan make:request Admin/ProductUpdateRequest
+2. ভ্যালিডেটে করলাম 
+
+
+
+*/
