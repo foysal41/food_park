@@ -133,6 +133,14 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $product = Product::findOrFail($id); // এখানে প্রোডাক্ট ডিফাইন করা হলো
+            $this->removeImage($product->thumb_image); // প্রোডাক্টের thumb_image রিমুভ করা হলো
+            $product->delete(); // প্রোডাক্ট ডিলিট করা হলো
+            return response(['status' => 'success', 'message' => 'Deleted Successfully']);
+        } catch (\Exception $e) {
+            return response(['status' => 'error', 'message' => 'Something went wrong']);
+        }
     }
+
 }
