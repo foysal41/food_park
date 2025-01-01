@@ -88,7 +88,6 @@ class CategoryDataTable extends DataTable
             Column::make('name'),
             Column::make('show_at_home'),
             Column::make('status'),
-
             Column::computed('action')
             ->exportable(false)
             ->printable(false)
