@@ -49,7 +49,8 @@ Request:
 Input Name: ইমেজ ইনপুট ফিল্ডের নাম (যেমন: avatar) পাস করতে হবে। এটি নিশ্চিত করবে কোন ফিল্ড থেকে ডেটা নেওয়া হবে।
     */
 
-    function uploadImage(Request $request, $inputName, $oldPath=NULL, $path = "/uploads"){
+    public function uploadImage(Request $request, $inputName, $oldPath = null, $path = '/uploads')
+    {
 
         /*
          if($request->hasFile($inputName)){
@@ -64,7 +65,8 @@ Input Name: ইমেজ ইনপুট ফিল্ডের নাম (যে
 
 
             //একটি ভ্যারিয়েবল $image ডিক্লেয়ার করি, যা রিকোয়েস্ট থেকে ফাইল গ্রহণ করবে।
-            $image = $request->{$inputName};
+            $image = $request->file($inputName);
+
 
             /*
                 $image হলো আমাদের ইনপুট ফাইলের অবজেক্ট।
@@ -77,6 +79,8 @@ Input Name: ইমেজ ইনপুট ফিল্ডের নাম (যে
 
             //এবার image store  এ  সেভ  করবো
             $image->move(public_path($path) , $imageName);
+
+
 
             //delete old iamge
             if($oldPath &&File::exists(public_path($oldPath))){
