@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\WhyChooseUsController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductGalleryController;
 use App\Models\Category;
 use App\Models\WhyChooseUs;
 use Illuminate\Support\Facades\Route;
@@ -55,11 +56,15 @@ Route::group(['prefix' => 'admin', 'as' =>'admin.'], function(){
     Route::resource('why-choose-us' , WhyChooseUsController::class);
 
      /*  Prouct Category Route */
-     route::resource('category' , CategoryController::class);
+     Route::resource('category' , CategoryController::class);
 
 
      /*  Product  Route */
-     route::resource('product' , ProductController::class);
+     Route::resource('product' , ProductController::class);
+
+     /*  Product Gallery  Route */
+     Route::get('product-gallery/{product}' , [ProductGalleryController::class, 'index'])->name('product-gallery.show-index');
+     Route::resource('product-gallery' , ProductGalleryController::class);
 
 });
 
