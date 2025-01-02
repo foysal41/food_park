@@ -20,3 +20,21 @@
 7. কন্ট্রোলারে সেই রাউটের ভিউ রিটার্ন করে দিলাম
 
 */
+
+
+
+
+/*
+    --------------------|129. 2_Product Gallery - Working with Create Feature----------------
+
+1. একটি html form বানিয়ে নিলাম gallery index page এরমধ্যে
+2. store method  কে validate করলাম
+
+3. মাইগ্রেশনের ভিতর দুটো column তৈরি করতে হবে
+     -এখানে আমরা দুইটা কলাম তৈরি করব
+     - gallery.index ভিউয়ের ভিতরে  <input type="hidden" name="product_id" value="{{ $productId }}">
+    - controller index method ভিতরে  String $productId parameter pass করলাম and compact করলাম;
+    -store function ভিতরে image oi category wise save korlam
+
+
+ */
