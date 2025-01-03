@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Product;
+use App\Models\ProductSize;
+use Illuminate\Http\RedirectResponse;
 
 class ProductSizeController extends Controller
 {
@@ -29,9 +31,22 @@ class ProductSizeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request) : RedirectResponse
     {
-        //
+        $request->validate([
+            'size' =>  ['required' , 'max:255'],
+            'price' => ['required' , 'numeric'],
+            'product_id' => ['required' , 'integer']
+        ]);
+
+        $size = new ProductSize();
+        $size->product_id = $request->product_id;
+        $size->size = $request->size;
+        $size->price = $request->price;
+        $size->save();
+
+        toastr()->success('Product Size Created Successfully');
+        return redirect()->back();
     }
 
     /**

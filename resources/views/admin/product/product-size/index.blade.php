@@ -3,7 +3,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Product Gallery  ({{ $product->name }})</h1>
+            <h1>Product Size  ({{ $product->name }})</h1>
         </div>
 
         <div>
@@ -12,23 +12,36 @@
 
         <div class="card card-primary">
             <div class="card-header">
-                <h4>All Gallery</h4>
+                <h4>Create Size</h4>
 
             </div>
             <div class="card-body">
-                <div class="col-md-8">
-                    <form action="{{ route('admin.product-gallery.store') }}"  method="POST" enctype="multipart/form-data">
+
+                    <form action="{{ route('admin.product-size.store') }}"  method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="form-group">
-                            <input type="file" class="form-control" name="image">
-                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Product Size</label>
+                                    <input type="text" class="form-control" name="size">
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Price</label>
+                                    <input type="text" class="form-control" name="price">
+                                </div>
+                            </div>
                         </div>
 
+
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary"> upload </button>
+                            <button type="submit" class="btn btn-primary"> Create </button>
                         </div>
                     </form>
-                </div>
+
 
             </div>
         </div>
