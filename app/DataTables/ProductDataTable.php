@@ -32,6 +32,8 @@ class ProductDataTable extends DataTable
                       <div class="dropdown-menu dropleft">
                         <a class="dropdown-item" href="' .route('admin.product-gallery.show-index' , $query->id). '">Product Gallery</a>
 
+                         <a class="dropdown-item" href="' .route('admin.product-size.show-index' , $query->id). '">Product Size</a>
+
                       </div>
                     </div>';
 
