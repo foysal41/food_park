@@ -49,31 +49,34 @@
 
         <div class="card card-primary">
 
-            {{--
+
             <div class="card-body">
 
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
                             <th>Action</th>
                         </tr>
                     </thead>
 
 
                     <tbody>
-                    @foreach ($images as $image )
+                    @foreach ($sizes as $size )
                     <tr>
-                        <td><img width="150px" src="{{ asset($image->image) }}" alt=""></td>
+                        <td>{{ $size->size }}</td>
+                        <td>{{ $size->price }}</td>
+
                         <td>
-                            <a href='{{ route('admin.product-gallery.destroy' , $image->id) }}' class='btn btn-danger btn-sm ml-2 delete-item'> <i class='fas fa-trash'></i></a>
+                            <a href='{{ route('admin.product-size.destroy' , $size->id) }}' class='btn btn-danger btn-sm ml-2 delete-item'> <i class='fas fa-trash'></i></a>
                         </td>
                     </tr>
                     @endforeach
 
-                    @if(count($images) === 0){
+                    @if(count($sizes) === 0){
                         <tr>
-                            <td colspan="2" class="text-center">No Data Found</td>
+                            <td colspan="3" class="text-center">No Data Found</td>
                         </tr>
                     }
                     @endif
@@ -85,7 +88,7 @@
 
 
             </div>
-            --}}
+
         </div>
 
 
