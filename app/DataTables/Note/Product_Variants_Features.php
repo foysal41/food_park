@@ -62,3 +62,10 @@ product size controller অপ্রয়োজনীয় ফাংশন গ
 
 
 
+/* --------------------| 135. 5_Product Option Variant - Showing Created Datas|---------------
+
+product size controller এর মদ্ধে create method এর মদ্ধে $options variable এর মদ্ধে ডাটা গুলা তুলে নিয়ে আসব
+delete function কাজ করলাম
+
+
+*/

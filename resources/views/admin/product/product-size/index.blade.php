@@ -3,7 +3,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Product Size ({{ $product->name }})</h1>
+            <h1>Product varient ({{ $product->name }})</h1>
         </div>
 
         <div>
@@ -14,7 +14,7 @@
             <div class="col-md-6">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h4>Create Size</h4>
+                        <h4>Create Product Size</h4>
 
                     </div>
                     <div class="card-body">
@@ -57,6 +57,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>No. </th>
                                     <th>Name</th>
                                     <th>Price</th>
                                     <th>Action</th>
@@ -67,6 +68,7 @@
                             <tbody>
                                 @foreach ($sizes as $size)
                                     <tr>
+                                        <td>{{ ++$loop->index }}</td>
                                         <td>{{ $size->size }}</td>
                                         <td>{{ $size->price }}</td>
 
@@ -143,6 +145,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>No. </th>
                                     <th>Name</th>
                                     <th>Price</th>
                                     <th>Action</th>
@@ -151,20 +154,21 @@
 
 
                             <tbody>
-                                @foreach ($sizes as $size)
+                                @foreach ($options as $option)
                                     <tr>
-                                        <td>{{ $size->size }}</td>
-                                        <td>{{ $size->price }}</td>
+                                        <td>{{ ++$loop->index }}</td>
+                                        <td>{{ $option->size }}</td>
+                                        <td>{{ $option->price }}</td>
 
                                         <td>
-                                            <a href='{{ route('admin.product-size.destroy', $size->id) }}'
+                                            <a href='{{ route('admin.product-option.destroy', $option->id) }}'
                                                 class='btn btn-danger btn-sm ml-2 delete-item'> <i
                                                     class='fas fa-trash'></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
 
-                                @if (count($sizes) === 0)
+                                @if (count($options) === 0)
                                     {
                                     <tr>
                                         <td colspan="3" class="text-center">No Data Found</td>
