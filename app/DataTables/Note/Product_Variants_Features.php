@@ -40,3 +40,25 @@ product size controller অপ্রয়োজনীয় ফাংশন গ
 পরবর্তী part এর অপশনাল সাইজ এড করার কাজগুলো করব
 
 */
+
+
+/* --------------------| 134. 4_Product Option Variant - Working with Create Feature|---------------
+
+1. প্রোডাক্ট অপশনাল ক্রিয়েট এর কন্ট্রোলার বানাবো php artisan make:controller Admin/ProductOptionController -r
+- php artisan make:model ProductOption -m
+- তারপর একটি রাউটফাইল তৈরি করব
+
+2. এই প্রোডাক্ট অপশন কন্ট্রোলারের জন্য কোন ভিউ ফাইল তৈরি করব না. প্রোডাক্ট সাইজ ভিউয়ের ভেতরে বিষয়গুলো ডিসপ্লে করব
+- আমরা আলাদাভাবে দুইটা ফর্ম এর toastr এই মেসেজ দেখাতে পারলাম
+
+3. database এর সেভ করার জন্য backend ready করলাম
+
+4. database product size controller এর মদ্ধে create method এর মদ্ধে column বানালাম
+
+পরে এই ডাটা গুলা পেজ এ দেখাবো
+
+
+*/
+
+
+
