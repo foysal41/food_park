@@ -1,0 +1,18 @@
+<?php
+
+/*
+    --------------------| 136. 1_Showing Products - Show Dynamic Product in Food Menu Section (Part - 1)|----------------
+
+    1 যেহেতু আমরা backend থেকে সকল ডাটা তুলে নিয়ে এসে ফন্টে দেখাবো সেহেতু  frontend controller মধ্যে ক্যাটাগরি variable যে লজিকটি তৈরি করব Show_at_home = 1 and status =1 থাকে তাহলে ডাটা গুলো দেখাবে
+
+    2. ক্যাটাগরি নাম গুলি স্ট্যাটিকভাবে কেটে দিয়ে এখানে ডাইনামিক ভাবে দেখানোর জন্য loop চালাবো. এখানে ক্যাটাগরির নাম গুলো backend থেকে ডাইনামিক ভাবে দেখাবে. কারন আমরা frontend controller থেকে category model er logic তৈরি করেছি এবং তা front_end.index পাঠিয়ে দিয়েছি
+
+    3. category and data filter dynamic করলাম। এবং প্রোডাক্ট এর static data গুলা ফেলে দিলাম।
+
+
+
+
+
+
+
+ */
