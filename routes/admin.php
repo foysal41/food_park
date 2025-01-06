@@ -69,13 +69,13 @@ Route::group(['prefix' => 'admin', 'as' =>'admin.'], function(){
      Route::resource('product-gallery' , ProductGalleryController::class);
 
 
-          /*  Product Size  Route */
-          Route::get('product-size/{product}' , [ProductSizeController::class, 'index'])->name('product-size.show-index');
-          Route::resource('product-size' , ProductSizeController::class);
+      /*  Product Size  Route */
+     Route::get('product-size/{product}' , [ProductSizeController::class, 'index'])->name('product-size.show-index');
+     Route::resource('product-size' , ProductSizeController::class);
 
 
-           /*  Product option  Route */
-        Route::resource('product-option' , ProductOptionController::class);
+    /*  Product option  Route */
+     Route::resource('product-option' , ProductOptionController::class);
 
 
 

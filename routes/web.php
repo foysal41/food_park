@@ -27,7 +27,7 @@ use PHPUnit\Framework\Attributes\Group;
    });
 
 
-Route::get('/' , [FrontendController::class , 'index'])->name('home');
+
 
 /*
 Route::get('/dashboard', function () {
@@ -47,6 +47,11 @@ Route::group(['middleware' => 'auth'] , function(){
 
 require __DIR__.'/auth.php';
 
+/* Show Home  Page */
+Route::get('/' , [FrontendController::class , 'index'])->name('home');
+
+/* Show Product Details Page */
+Route::get('/product/{slug}' , [FrontendController::class , 'showProduct'])->name('product.show');
 
 /*
 moved to admin.php route
