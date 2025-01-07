@@ -58,3 +58,16 @@
     - যেহেতু প্রোডাক্ট গ্যালারি এবং প্রোডাক্ট দুইটা সেপারেট টেবিল তাই এই দুইটার ভিতরে রিলেশন করাতে হবে. এখানে আমরা hasMany relation ব্যবহার করব. a product has many images. has many relation করে সরাসরি প্রডাক্ট থেকে গ্যালারি ইমেজের ছবি সিঙ্গেল পেজের ব্যবস্থা করাতে পারলাম
 
  */
+
+
+  /*
+    --------------------|140. 5_Showing Products - Show Dynamic Product in Product View Page (Part - 3)|----------------
+
+1. price dynamic করলাম
+2.প্রোডাক্ট size এর সাথে product hasMany রিলেশনশিপ করাতে হবে
+2.প্রোডাক্ট option এর সাথে product hasMany রিলেশনশিপ করাতে হবে
+3. fixing checkbox bug
+4. FrontendController এর মদ্ধে with(['productGallery' , 'productSizes', 'productOptions']) egolf করলাম। যেন যে মডেল request আসবে শুধু ওইটা laod হবে। 
+
+
+ */

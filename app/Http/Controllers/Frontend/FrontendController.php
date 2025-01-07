@@ -38,8 +38,10 @@ class FrontendController extends Controller
 
     function showProduct(string $slug) : View{
         //$productGalleries = ProductGallery::where('product_id' , 1)->get();
-        $product = Product::where(['slug' =>$slug, 'status' => 1])->first();
-        return view('frontend.pages.product-View' , compact('productGalleries'));
+        $product = Product::with(['productGallery' , 'productSizes', 'productOptions'])->where(['slug' =>$slug, 'status' => 1])->firstOrFail();
+
+
+        return view('frontend.pages.product-View' , compact('product' ));
     }
 
 }
