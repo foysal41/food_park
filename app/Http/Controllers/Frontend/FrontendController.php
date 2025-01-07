@@ -7,6 +7,8 @@ use App\Models\Category;
 use App\Models\Slider;
 use App\Models\SectionTitle;
 use App\Models\WhyChooseUs;
+use App\Models\ProductGallery;
+use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 
@@ -20,7 +22,8 @@ class FrontendController extends Controller
         $whyChooseUs = WhyChooseUs::where('status' , 1)->get();
         $categories = Category::where('show_at_home', 1)->where('status', 1)->get();
 
-        return view('frontend.home.index' , compact('sliders' , 'sectionTitles' , 'whyChooseUs' , 'categories'));
+
+        return view('frontend.home.index' , compact('sliders' , 'sectionTitles' , 'whyChooseUs' , 'categories' ));
 
     }
 
@@ -34,7 +37,9 @@ class FrontendController extends Controller
     }
 
     function showProduct(string $slug) : View{
-        return view('frontend.pages.product-View');
+        //$productGalleries = ProductGallery::where('product_id' , 1)->get();
+        $product = Product::where(['slug' =>$slug, 'status' => 1])->first();
+        return view('frontend.pages.product-View' , compact('productGalleries'));
     }
 
 }
