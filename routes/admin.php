@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductGalleryController;
 use App\Http\Controllers\Admin\ProductOptionController;
 use App\Http\Controllers\Admin\ProductSizeController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Models\Category;
 use App\Models\WhyChooseUs;
 use Illuminate\Support\Facades\Route;
@@ -79,6 +80,8 @@ Route::group(['prefix' => 'admin', 'as' =>'admin.'], function(){
 
 
 
+    /* Setting Route  */
+    Route::get('/setting' , [SettingController::class, 'index'])->name('setting.index');
 
 
 });

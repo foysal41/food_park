@@ -83,14 +83,15 @@
                 5. index এ কিছু content দিয়ে slider display করলাম।
                 --}}
 
-            <li><a class="nav-link" href="{{ route('admin.slider.index') }}"><i class="far fa-square"></i>
+            <li><a class="nav-link" href="{{ route('admin.slider.index') }}"><i class=" fas fa-chevron-right"></i>
                     <span>Slider</span></a></li>
 
-            <li><a class="nav-link" href="{{ route('admin.why-choose-us.index') }}"><i class="far fa-square"></i>
+            <li><a class="nav-link" href="{{ route('admin.why-choose-us.index') }}"><i class="fas fa-check-circle icon"></i>
                     <span>Why Choose Us</span></a></li>
 
             <li class="dropdown">
-                <a href="#" class="has-dropdown nav-link"><i class="far fa-square"></i> <span>Manage Resturnat</span></a>
+                <a href="#" class="has-dropdown nav-link"><i class="fas fa-users-cog"></i> <span>Manage
+                        Resturnat</span></a>
 
                 <ul class="dropdown-menu">
                     <li> <a href="{{ route('admin.product.index') }}" class="nav-link">All Products</a> </li>
@@ -98,6 +99,10 @@
 
                 </ul>
 
+
+            <li><a class="nav-link" href="{{ route('admin.setting.index') }}"><i class="fas fa-cog"></i>
+
+                    <span>Setting</span></a></li>
             </li>
 
 
