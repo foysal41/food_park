@@ -108,7 +108,7 @@ class ProductController extends Controller
 
       $product->thumb_image = !empty($imagePath) ? $imagePath : $product->thumb_image;
       $product->name = $request->name;
-      $product->slug = create_unique_slug('Product' , $request->name); //  আমাদের  slug অবশই unique করতে হবে না হলে applicatio এর সমস্যা হবে
+     // এই লাইনটি রিমুভ করে দিচ্ছি কারণ যখন আমরা প্রোডাক্ট আপডেট করব তখন আমাদের slug or url এর কোন পরিবর্তন করতে চাচ্ছি না
       $product->category_id = $request->category;
       $product->price = $request->price;
       $product->offer_price = $request->offer_price;

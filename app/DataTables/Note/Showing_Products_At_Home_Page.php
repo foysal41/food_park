@@ -67,7 +67,25 @@
 2.প্রোডাক্ট size এর সাথে product hasMany রিলেশনশিপ করাতে হবে
 2.প্রোডাক্ট option এর সাথে product hasMany রিলেশনশিপ করাতে হবে
 3. fixing checkbox bug
-4. FrontendController এর মদ্ধে with(['productGallery' , 'productSizes', 'productOptions']) egolf করলাম। যেন যে মডেল request আসবে শুধু ওইটা laod হবে। 
+4. FrontendController এর মদ্ধে with(['productGallery' , 'productSizes', 'productOptions']) egolf করলাম। যেন যে মডেল request আসবে শুধু ওইটা laod হবে।
 
 
  */
+
+
+   /*
+    --------------------|141. 6_Showing Products - Show Dynamic Products in Related Item Section|----------------
+1. এখন দেখব আমার রিলেটেড প্রোডাক্ট কিভাবে নিচে দেখাতে হয়. তার জন্য রিলেটেড প্রোডাক্ট নামে একটা variable তৈরি করব frontend controller এরমধ্যে
+    -ভেরিয়েবলের মধ্যে প্রথমে product model কে কল করব তারপর একটি array ভেতরে প্রোডাক্টের category আইডি চেক করব  je. ও বের করে দিবে ওই প্রোডাক্টের যে ক্যাটাগরির মধ্যে যে প্রোডাক্ট গুলো আছে সেগুলো fatch করে দিবে  product::where('category_id' , $product->category_id)
+
+    -আরেকটি where  কন্ডিশনের মধ্যে আমরা চেক করলাম যেটা কারেন্ট প্রোডাক্ট সেটা যেন রিলেটেড প্রোডাক্টের নিচে না দেখায়
+    - take(8) এই ফাংশনটা ব্যবহার হচ্ছে যে আটটা রিলেটেড প্রোডাক্ট দেখাবেন
+    -latest() একদম লেটেস্ট প্রোডাক্ট গুলি দেখাবে
+2. product loop করলাম
+
+3. slug সমস্যা সমাধান করলাম
+4. লেটেস্ট প্রোডাক্টগুলো আগে শো করবে সে অর্ডারিং করে দিলাম
+
+
+ */
+
