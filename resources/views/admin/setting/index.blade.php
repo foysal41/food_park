@@ -46,58 +46,66 @@
 
                                             <div class="form-group">
                                                 <label for="">Default Currency</label>
-                                                <select name="" id="" class="form-control select2" name="site_default_currency">
-                                                    <option value="">Test</option>
+                                                <select name="site_default_currency" id="site_default_currency"
+                                                    class="form-control select2">
+                                                    <option value="USD">USD</option>
+                                                    <option value="EUR">EUR</option>
                                                 </select>
-
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    . <div class="form-group">
+                                                    <div class="form-group">
                                                         <label for="">Currency Symbol</label>
-                                                        <input type="text" class="form-control" name="site_currency_icon">
+                                                        <input type="text" class="form-control"
+                                                            name="site_currency_icon">
                                                     </div>
-
                                                 </div>
 
                                                 <div class="col-md-6">
-                                                    . <div class="form-group">
+                                                    <div class="form-group">
                                                         <label for="">Currency Icon Position</label>
-                                                        <select name="" id="" class="form-control select2" name="site_currency_icon_position">
+                                                        <select name="site_currency_icon_position"
+                                                            id="site_currency_icon_position" class="form-control select2">
                                                             <option value="right">Right</option>
                                                             <option value="left">Left</option>
                                                         </select>
                                                     </div>
-
                                                 </div>
                                             </div>
-                                            <button class="btn btn-primary" type="submit">Submit</button>
-                                        </div>
 
+                                            <button class="btn btn-primary" type="submit">Submit</button>
                                         </form>
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile4" role="tabpanel" aria-labelledby="profile-tab4">
-                                Sed sed metus vel lacus hendrerit tempus. Sed efficitur velit tortor, ac efficitur est
-                                lobortis quis. Nullam lacinia metus erat, sed fermentum justo rutrum ultrices. Proin quis
-                                iaculis tellus. Etiam ac vehicula eros, pharetra consectetur dui. Aliquam convallis neque
-                                eget tellus efficitur, eget maximus massa imperdiet. Morbi a mattis velit. Donec hendrerit
-                                venenatis justo, eget scelerisque tellus pharetra a.
-                            </div>
-                            <div class="tab-pane fade" id="contact4" role="tabpanel" aria-labelledby="contact-tab4">
-                                Vestibulum imperdiet odio sed neque ultricies, ut dapibus mi maximus. Proin ligula massa,
-                                gravida in lacinia efficitur, hendrerit eget mauris. Pellentesque fermentum, sem interdum
-                                molestie finibus, nulla diam varius leo, nec varius lectus elit id dolor. Nam malesuada orci
-                                non ornare vulputate. Ut ut sollicitudin magna. Vestibulum eget ligula ut ipsum venenatis
-                                ultrices. Proin bibendum bibendum augue ut luctus.
+                                <div class="tab-pane fade" id="profile4" role="tabpanel" aria-labelledby="profile-tab4">
+                                    Sed sed metus vel lacus hendrerit tempus. Sed efficitur velit tortor, ac efficitur est
+                                    lobortis quis. Nullam lacinia metus erat, sed fermentum justo rutrum ultrices. Proin
+                                    quis
+                                    iaculis tellus. Etiam ac vehicula eros, pharetra consectetur dui. Aliquam convallis
+                                    neque
+                                    eget tellus efficitur, eget maximus massa imperdiet. Morbi a mattis velit. Donec
+                                    hendrerit
+                                    venenatis justo, eget scelerisque tellus pharetra a.
+                                </div>
+                                <div class="tab-pane fade" id="contact4" role="tabpanel" aria-labelledby="contact-tab4">
+                                    Vestibulum imperdiet odio sed neque ultricies, ut dapibus mi maximus. Proin ligula
+                                    massa,
+                                    gravida in lacinia efficitur, hendrerit eget mauris. Pellentesque fermentum, sem
+                                    interdum
+                                    molestie finibus, nulla diam varius leo, nec varius lectus elit id dolor. Nam malesuada
+                                    orci
+                                    non ornare vulputate. Ut ut sollicitudin magna. Vestibulum eget ligula ut ipsum
+                                    venenatis
+                                    ultrices. Proin bibendum bibendum augue ut luctus.
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-        </div>
 
 
     </section>

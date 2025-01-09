@@ -70,3 +70,36 @@ updateOrCreate মেথড (updateGeneralSetting):
 
 
 */
+
+
+/*
+--------------------|145. 3_General Settings - Working with Update Form (Part - 2)|----------------
+
+১. ফর্ম ডেটা ভ্যালিডেশন
+    ভ্যালিডেশন করা: validate মেথড ব্যবহার করে ফর্ম ডেটা যাচাই করা হয়েছে।
+    -name ফিল্ড: required, max: 255।
+    -default_currency ফিল্ড: required, max: 4 (যেমন: USD)।
+    -currency_icon ফিল্ড: required, এক অক্ষরের জন্য (যেমন: $)।
+    -position ফিল্ড: required, max: 255।
+
+
+২. ডেটাবেজ টেবিল আপডেট করা
+    টেবিল তৈরি: settings নামে একটি টেবিল রয়েছে।
+    -এতে key এবং value নামে দুটি কলাম আছে।
+    -key: ইনপুট ফিল্ডের নাম স্টোর হবে।
+    -value: ইনপুট ফিল্ডের ভ্যালু স্টোর হবে।
+    -value ফিল্ডকে nullable করা হয়েছে, কারণ কিছু ক্ষেত্রে এটি খালি থাকতে পারে।
+    php artisan migrate
+
+
+
+৩. ডেটা সেভ করার প্রক্রিয়া
+    ভ্যালিড ডেটা validated_data ভ্যারিয়েবলে রাখা হয়েছে।
+    loop চালিয়ে: প্রতিটি কীর জন্য updateOrCreate মেথড ব্যবহার করা হয়েছে:
+    - যদি key আগে থেকে থাকে: তার মান আপডেট করা হবে।
+    - যদি key না থাকে: নতুন এন্ট্রি তৈরি করা হবে।
+বিসারিতঃ https://docs.google.com/document/d/14rgoxthxChWnU9Ix4bqWO8QFgHn7fTcvyQFCfSO--L4/edit?usp=sharing
+
+৪. setting model এর মদ্ধে table er column $fillable করতে হবে। না হলে Field key doesn't have a default value error আসতে পারে।
+
+*/
