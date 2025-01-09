@@ -129,7 +129,7 @@ updateOrCreate মেথড (updateGeneralSetting):
     setting er ডাটা cache e save করবো। পরবর্তীতে ইউজার যখন রিকোয়েস্ট করবে তখন cache থেকে ডাটা গুলো তুলে দিব
 
 
-4. ক্যাশ ব্যবহার করা getSettings() মেথড:
+4. ক্যাশ ব্যবহার করা getSettings() মেথড:  setting  > settingService.php
 Details: https://docs.google.com/document/d/1k2MeW8Bkou7PuPtVkgNvEOShLatN8kB5CEe3fVI6kkw/edit?usp=sharing
     ডেটাবেস থেকে সেটিংস ডেটা ফেচ করে একটি অ্যারে ফরম্যাটে রিটার্ন করে।
     ক্যাশ ব্যবহার করা হয়েছে যাতে ডেটা বারবার ডেটাবেস থেকে না ফেচ হয়।
@@ -149,3 +149,39 @@ Details: https://docs.google.com/document/d/1k2MeW8Bkou7PuPtVkgNvEOShLatN8kB5CEe
     এটি তখনই দরকার হয় যখন ডেটা আপডেট বা পরিবর্তন করা হয়।
 */
 
+/*
+--------------------|147. 5_General Settings - Accessing Settings Globally in Project (Part - 2)|----------------
+
+
+1. **Type Hinting (ধরন উল্লেখ করা)**
+   - `clearCachedSettings()` এবং `getGlobalSetting()` মেথডে `void` টাইপ হিন্ট দেওয়া হয়েছে।
+
+2. **Service Provider তৈরি করা**
+   - `php artisan make:provider SettingsServiceProvider` কমান্ড চালিয়ে নতুন একটি সার্ভিস প্রোভাইডার তৈরি করা হয়েছে।
+   - প্রোভাইডারটি `app/Providers` ফোল্ডারে থাকে।
+
+3. **Register Method (সার্ভিস নিবন্ধন করা)**
+   - `register()` মেথডে `app()->singleton()` ব্যবহার করে সার্ভিস (`SettingsService`) নিবন্ধন করা হয়েছে।
+   - এই মেথডটি সার্ভিসকে একবার তৈরি করে অ্যাপ্লিকেশনের জন্য সংরক্ষণ করে।
+
+4. **Boot Method (সার্ভিস চালু করা)**
+   - `boot()` মেথডে `app()->make()` দিয়ে সার্ভিস ইনস্ট্যান্স তৈরি করা হয়েছে।
+   - `setGlobalSettings()` মেথড কল করে কনফিগে সেটিংস ডেটা সংরক্ষণ করা হয়েছে।
+
+5. **Config Helper ব্যবহার করা**
+   - `config('settings.key_name')` ব্যবহার করে অ্যাপ্লিকেশনের যেকোনো স্থানে সেটিংস ডেটা অ্যাক্সেস করা যায়।
+   - যেমনঃ `config('settings.site_name')` দিয়ে ডেটাবেজের `site_name` ভ্যালু পাওয়া গেছে।
+
+6. **Cache ব্যবহার করা**
+   - `cache()->get('settings')` দিয়ে ক্যাশে সংরক্ষিত সেটিংস ডেটা চেক করা হয়েছে।
+   - ক্যাশে ডেটা সংরক্ষণ করা হলে সেটিংস টেবিল থেকে প্রতি রিকোয়েস্টে কোয়েরি চালানোর প্রয়োজন হয় না।
+
+7. **Service Provider রেজিস্ট্রেশন**
+   - `config/app.php` ফাইলের `providers` অ্যারের মধ্যে `SettingsServiceProvider` যোগ করা হয়েছে।
+
+8. **Working Example (কাজ করছে কিনা পরীক্ষা)**
+   - `PHP Artisan Tinker`-এ গিয়ে `config('settings.site_name')` ও `cache()->get('settings')` দিয়ে ডেটা রিটার্ন হচ্ছে কিনা পরীক্ষা করা হয়েছে।
+
+
+
+*/
