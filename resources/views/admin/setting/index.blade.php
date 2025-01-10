@@ -41,7 +41,7 @@
 
                                             <div class="form-group">
                                                 <label for="">Site Name</label>
-                                                <input type="text" class="form-control" name="site_name">
+                                                <input type="text" class="form-control" name="site_name" value="{{ config('settings.site_name') }}">
                                             </div>
 
                                             <div class="form-group">
@@ -58,7 +58,7 @@
                                                     <div class="form-group">
                                                         <label for="">Currency Symbol</label>
                                                         <input type="text" class="form-control"
-                                                            name="site_currency_icon">
+                                                            name="site_currency_icon" value="{{ config('settings.site_currency_icon') }}">
                                                     </div>
                                                 </div>
 
@@ -67,8 +67,8 @@
                                                         <label for="">Currency Icon Position</label>
                                                         <select name="site_currency_icon_position"
                                                             id="site_currency_icon_position" class="form-control select2">
-                                                            <option value="right">Right</option>
-                                                            <option value="left">Left</option>
+                                                            <option @selected(config('settings.site_currency_icon_position') === 'right') value="right">Right</option>
+                                                            <option @selected(config('settings.site_currency_icon_position') === 'left') value="left">Left</option>
                                                         </select>
                                                     </div>
                                                 </div>

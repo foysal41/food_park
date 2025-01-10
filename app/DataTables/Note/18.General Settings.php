@@ -182,6 +182,33 @@ Details: https://docs.google.com/document/d/1k2MeW8Bkou7PuPtVkgNvEOShLatN8kB5CEe
 8. **Working Example (কাজ করছে কিনা পরীক্ষা)**
    - `PHP Artisan Tinker`-এ গিয়ে `config('settings.site_name')` ও `cache()->get('settings')` দিয়ে ডেটা রিটার্ন হচ্ছে কিনা পরীক্ষা করা হয়েছে।
 
+*/
+
+
+/*
+--------------------|148. 6_General Settings - Showing Data at Settings Form|----------------
+১. General Settings Form এ ডেটা দেখানো:ডাটাবেস থেকে স্টোর করা ডেটা General Settings ফর্মে দেখানো হবে।
+    ডেটা config হেল্পার ফাংশন দিয়ে এক্সেস করা হচ্ছে, যেমন config('settings.site_name')।
+
+২. ডাটাবেস থেকে ফিল্ডে ডেটা দেখানো:
+    Site Name:
+    -value অ্যাট্রিবিউটের মাধ্যমে settings.site_name ডেটা দেখানো হয়েছে। value="{{ config('settings.site_name') }}"
+    Currency Icon:
+    -value অ্যাট্রিবিউটের মাধ্যমে settings.site_currency_icon ডেটা দেখানো হয়েছে।
+    Currency Position:
+    -right বা left এর জন্য ডায়নামিকভাবে selected অ্যাট্রিবিউট যুক্ত করা হয়েছে।
+
+৩. ডেটা আপডেট প্রসেস:
+Save বাটনে ক্লিক করার পর ডেটা ডাটাবেসে আপডেট হয়।
+ডাটাবেসে নতুন ডেটা সঠিকভাবে সেভ হচ্ছে, যেমন Food Park, $, এবং left।
+
+৪. ক্যাশিং সমস্যা:
+ডেটা আপডেট করার পরেও ফ্রন্টএন্ডে নতুন ডেটা দেখাচ্ছে না।
+এর কারণ হলো, ডেটা ক্যাশ থেকে ফেচ হচ্ছে, এবং ক্যাশ আপডেট হয়নি।
+
+৫. ক্যাশ ম্যানেজমেন্ট:
+PHP Artisan Tinker ব্যবহার করে then \Cache::get('settings') ক্যাশ চেক করা হয়েছে।
+
 
 
 */
