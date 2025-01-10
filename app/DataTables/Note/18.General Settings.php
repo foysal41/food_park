@@ -212,3 +212,26 @@ PHP Artisan Tinker ব্যবহার করে then \Cache::get('settings') 
 
 
 */
+
+
+
+/*
+--------------------|149. 7_General Settings - Forgetting Setting Cache|----------------
+
+ইস্যু:
+    ফর্ম আপডেট করলে ডাটাবেসে নতুন ডাটা আপডেট হচ্ছে। কিন্তু ফর্মের ইনপুট ফিল্ডে পুরানো ডাটা দেখাচ্ছে।
+    এর কারণ হলো ক্যাশে মেমোরিতে পুরানো ডাটা সংরক্ষিত রয়েছে। আমারা জানি config key ব্যবহার করে  ডাটা তুকে input এ দেহাচ্ছি।
+
+ক্যাশের ব্যবহার:
+    SettingService.php-এ getSettings মেথডে ডাটা ক্যাশে মেমোরিতে সংরক্ষিত হচ্ছে। এই মেথডটি rememberForever ব্যবহার করে ডাটা চিরস্থায়ীভাবে ক্যাশে রাখছে।
+
+ইস্যু সমাধান পদ্ধতি:
+ফর্ম আপডেট করার সময়  পুরানো ক্যাশ ডাটা মুছে ফেলা হবে। then আপডেট মেথডে clearSettingsCache কল করা হবে।
+clearSettingsCache মেথডটি Cache::forget('settings') ব্যবহার করে ক্যাশ ডাটা মুছে দেয়।
+
+কাজের প্রক্রিয়া:
+admin> settingController.php, এই মদ্ধে
+        $settingsServices = app(SettingsService::class);
+        $settingsServices->clearCachedSettings();
+
+*/
