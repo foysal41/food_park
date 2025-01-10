@@ -42,11 +42,11 @@ class ProductDataTable extends DataTable
 
 
             ->addColumn('price', function($query){
-                return '$'.$query->price;
+                return currencyPosition($query->price);
             })
 
             ->addColumn('offer_price', function($query){
-                return '$'.$query->price;
+                return currencyPosition($query->offer_price);
             })
 
             ->addColumn('show_at_home', function($query){

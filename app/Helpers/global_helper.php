@@ -26,3 +26,15 @@ if(!function_exists('create_unique_slug')){
         return $slug;
     }
 }
+
+if(!function_exists('currencyPosition')) {
+
+    function currencyPosition($price) : string {
+        if(config('settings.currency_position') == 'left')  {
+            return config('settings.site_currency_icon') . $price;
+     }else{
+        return $price . config('settings.site_currency_icon');
+     }
+    }
+}
+

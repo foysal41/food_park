@@ -60,10 +60,10 @@
                                 <h5 class="price">
 
                                     @if($product->offer_price > 0)
-                                    ${{ $product->offer_price }}
-                                    <del>${{ $product->price }}</del>
+                                    {{ currencyPosition($product->offer_price) }}
+                                    <del>{{ currencyPosition($product->price) }}</del>
                                     @else
-                                    ${{ $product->price }}
+                                    {{ currencyPosition($product->price) }}
                                     @endif
                                 </h5>
                                 <ul class="d-flex flex-wrap justify-content-center">
