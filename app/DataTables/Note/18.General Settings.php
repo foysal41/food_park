@@ -273,6 +273,6 @@ app/Helpers/GlobalHelper.php ফাইল এর মদ্ধে currencyPositio
 4. প্রোডাক্ট ডাটা টেবিলে (যেমন ProductDataTable.php) প্রাইস কলামে currencyPosition() ফাংশন ব্যবহার করে ডাইনামিক কারেন্সি যোগ করুন।
 
 5. অ্যাডমিন প্যানেলে সেটিংস and product varient এর currency এর ডাইনামিক কারেন্সি যোগ করলাম।
-
-
 */
+
+

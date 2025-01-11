@@ -109,7 +109,8 @@ $.ajaxSetup({
 });
 
 </script>
-
+<!--Load Global Scripts-->
+@include('frontend.layouts.global-scripts')
 @stack('scripts')
 </body>
 
