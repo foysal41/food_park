@@ -59,3 +59,8 @@ moved to admin.php route
 //এই লিঙ্ক যে কাউ admin ছাড়া কাউ access করতে পারবে। আমারা middleware দিয়ে দিব।
 Route::get('admin/dashboard' , [AdminDashboardController::class, 'index'])->middleware('auth' , 'role:admin')->name('admin.dashboard');
 */
+
+
+
+/* Product Modal Route */
+Route::get('load-product-modal/{productId}' , [FrontendController::class , 'loadProductModal'])->name('load-product-modal');;

@@ -46,4 +46,11 @@ class FrontendController extends Controller
         return view('frontend.pages.product-View' , compact('product' , 'reletedProducts'));
     }
 
+    function loadProductModal( $productId) {
+        //return $productId;
+
+        $product = Product::with(['productSizes', 'productOptions'])->findOrFail($productId);
+        dd($product);
+    }
+
 }
