@@ -50,7 +50,9 @@ class FrontendController extends Controller
         //return $productId;
 
         $product = Product::with(['productSizes', 'productOptions'])->findOrFail($productId);
-        dd($product);
+        //dd($product);
+
+        return view('frontend.layouts.ajax-files.product-popup-modal' )->render();
     }
 
 }

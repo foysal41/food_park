@@ -37,3 +37,17 @@ Next: প্রাথমিকভাবে একটি অ্যালার্
 
  AJAX Request চেক: Network ট্যাবে AJAX রিকোয়েস্ট এবং রেসপন্স যাচাই করলাম রিলেশন ডেটাসহ প্রোডাক্ট ডেটা সঠিকভাবে এসেছে কিনা তা ডিবাগ করা হয়েছে।
 */
+
+
+
+/*
+--------------------|154. 3_Cart Feature - Working with Product Popup Modal (Part - 3)|----------------
+ 1. ভিউ ডাইনামিক করা:
+    -পণ্য সম্পর্কিত ডেটা ডাইনামিকভাবে প্রদর্শন করতে একটি নতুন ব্লেড ফাইল তৈরি করা হয়েছে। frontend/layouts/ajax-files/product-popup-modal.blade.php, মূল model-body ডিভ থেকে কোড কেটে এই নতুন ফাইলে পেস্ট করা হয়েছে। frontend/home/components/cart-popup.blade.php
+    - এই model-body  এর মদ্ধে load_product_modal_body নামে একটা  ক্লাস এড করে দিলাম।
+    - আর অই খান থেকে cartModal এই id টা copy করলাম।
+
+2. global-scripts.blade.php এর dynamic ভাবে অ্যাড করে দিলাম।
+
+
+*/
