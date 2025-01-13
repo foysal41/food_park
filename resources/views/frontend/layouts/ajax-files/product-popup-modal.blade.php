@@ -1,5 +1,7 @@
 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
     class="fal fa-times"></i></button>
+
+<form action="">
 <div class="fp__cart_popup_img">
 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}" class="img-fluid w-100">
 </div>
@@ -16,9 +18,11 @@
 <h4 class="price">
 
     @if($product->offer_price > 0)
+    <input type="hidden" name="base_price" value="{{ $product->offer_price }}">
     {{ currencyPosition($product->offer_price)  }}
     <del> {{ currencyPosition($product->price)  }}</del>
     @else
+    <input type="hidden" name="base_price" value="{{ $product->price }}">
     {{ currencyPosition($product->price)  }}
     @endif
 
@@ -31,7 +35,7 @@
 
     @foreach ($product->productSizes as $productSize)
     <div class="form-check">
-        <input class="form-check-input" type="radio" value="$productSize->id" name="flexRadioDefault" id="size--{{ $productSize->id }}"
+        <input class="form-check-input" type="radio" value="{{ $productSize->id }}" name="product_size" data-price="{{ $productSize->price }}" id="size--{{ $productSize->id }}"
  >
         <label class="form-check-label" for="size--{{ $productSize->id }}">
             {{ $productSize->name }} <span>+ {{currencyPosition ($productSize->price) }}</span>
@@ -49,7 +53,7 @@
 
     @foreach ($product->productOptions as $productOption)
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="$productOption->id" id="Option--{{ $productOption->id }}">
+        <input class="form-check-input" type="checkbox" name="product_option[]" data-price="{{ $productOption->price }}" value="$productOption->id" id="Option--{{ $productOption->id }}">
         <label class="form-check-label" for="Option--{{ $productOption->id }}">
             {{ $productOption->name }} <span>+ {{ currencyPosition ($productOption->price) }}</span>
         </label>
@@ -73,3 +77,27 @@
     <li><a class="common_btn" href="#">add to cart</a></li>
 </ul>
 </div>
+</form>
+
+<script>
+    $(document).ready(function(){
+        $('input[name="product_size"]').on('change', function(){
+            //alert('working');
+            updateTotalPrice();
+        })
+
+        // Function to update the total price base on selected options
+        function updateTotalPrice(){
+            let basePrice = parseFloat($('input[name="base_price"]').val());
+            let selectedSizeprice = 0;
+            let selectedOptionPrice = 0;
+
+            // calculated the selected size price
+            let selectedSize = $('input[name="product_size"]:checked');
+            if(selectedSize.length > 0){
+                selectedSizeprice = parseFloat(selectedSize.data('price'));
+            }
+            alert(selectedSizeprice);
+        }
+    })
+</script>
