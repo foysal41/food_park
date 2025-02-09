@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\ProfileController as FrontendProfileController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -64,3 +65,6 @@ Route::get('admin/dashboard' , [AdminDashboardController::class, 'index'])->midd
 
 /* Product Modal Route */
 Route::get('load-product-modal/{productId}' , [FrontendController::class , 'loadProductModal'])->name('load-product-modal');;
+
+/* Add to card route */
+Route::post('add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
