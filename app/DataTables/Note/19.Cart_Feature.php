@@ -196,3 +196,12 @@ Next: প্রাথমিকভাবে একটি অ্যালার্
     ✅ এই ডাটাগুলো $options['product_options'] অ্যারেতে push (সংযুক্ত) করা হচ্ছে $options['product_options'][] => এটি array push
 
 */
+
+
+/*
+--------------------|163. 12_Add to Cart - Working with Add to Cart Feature (Part - 3)|----------------
+
+✅ cart fecrt  নিয়ে কাজ করলাম।
+✅ একটা error ছিল তা 'price' => $productSize?->price এই জায়গা ? দিলাম জে যদি ডাটা থাকে না হলে nullআসবে কিন্তু errro আসবে না।
+✅ কিছু ডাটা অ্যাড করলাম array এর মদ্ধে slug,image
+*/
